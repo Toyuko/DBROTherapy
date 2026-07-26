@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DBROTherapy — Find Your Path. Heal. Grow.</title>
+  <meta name="description" content="Advanced Molecular Hydrogen & Oxyhydrogen Systems for cellular hydration, recovery, and clinical biohacking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: { DEFAULT: '#0B5E67', dark: '#084850', light: '#0F7682' },
+            sage: { DEFAULT: '#4E8A5E', light: '#6BA57A', dark: '#3D6E4A' },
+            slatebody: '#1E293B',
+            soft: '#F8FAFC',
+            cyanaccent: '#06B6D4',
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 8px 30px rgba(11, 94, 103, 0.08)',
+            drawer: '0 0 40px rgba(30, 41, 59, 0.18)',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    [x-cloak] { display: none !important; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: #1E293B;
+      background: #F8FAFC;
+    }
+    .font-display { font-family: 'Fraunces', Georgia, serif; }
+    .bg-atmosphere {
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 20%, rgba(6, 182, 212, 0.12), transparent 50%),
+        radial-gradient(ellipse 70% 50% at 90% 10%, rgba(78, 138, 94, 0.14), transparent 45%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(11, 94, 103, 0.08), transparent 50%),
+        #F8FAFC;
+    }
+    .hero-video-mask {
+      background: linear-gradient(
+        105deg,
+        rgba(8, 72, 80, 0.88) 0%,
+        rgba(11, 94, 103, 0.72) 45%,
+        rgba(11, 94, 103, 0.45) 100%
+      );
+    }
+    @keyframes float-bubble {
+      0% { transform: translateY(0) scale(1); opacity: 0.35; }
+      50% { transform: translateY(-28px) scale(1.08); opacity: 0.55; }
+      100% { transform: translateY(0) scale(1); opacity: 0.35; }
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      animation: float-bubble 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up { animation: fade-up 0.7s ease-out both; }
+    .animate-fade-up-delay { animation: fade-up 0.7s ease-out 0.15s both; }
+    .animate-fade-up-delay-2 { animation: fade-up 0.7s ease-out 0.3s both; }
+    .product-gradient-1 { background: linear-gradient(145deg, #0B5E67 0%, #0F7682 40%, #06B6D4 100%); }
+    .product-gradient-2 { background: linear-gradient(145deg, #3D6E4A 0%, #4E8A5E 45%, #6BA57A 100%); }
+    .product-gradient-3 { background: linear-gradient(145deg, #084850 0%, #0B5E67 35%, #4E8A5E 100%); }
+    .product-gradient-acc { background: linear-gradient(145deg, #E2E8F0 0%, #CBD5E1 100%); }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 9999px;
+      background: #CBD5E1;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #0B5E67;
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    .checkout-step-line { height: 2px; background: #E2E8F0; }
+    .checkout-step-line.active { background: #0B5E67; }
+  </style>
+  <script src="https://unpkg.com/alpinejs@3.14.8/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-atmosphere antialiased" x-data="dbroStore()" x-cloak @keydown.escape.window="closeOverlays()">
+
+  <!-- ========== HEADER ========== -->
+  <header class="sticky top-0 z-40 border-b border-teal/10 bg-soft/90 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 lg:px-6">
+      <button type="button" class="lg:hidden rounded-md p-2 text-teal hover:bg-teal/5" @click="mobileNav = !mobileNav" aria-label="Toggle menu">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <a href="#" class="flex shrink-0 items-center" @click.prevent="go('home')">
+        <img src="logo.png" alt="DBROTherapy — Find Your Path. Heal. Grow." class="h-10 w-auto sm:h-12" />
+      </a>
+
+      <nav class="hidden items-center gap-1 lg:flex lg:ml-6">
+        <template x-for="link in navLinks" :key="link.id">
+          <button
+            type="button"
+            class="rounded-md px-3 py-2 text-sm font-medium transition-colors"
+            :class="currentTab === link.id ? 'bg-teal/10 text-teal' : 'text-slatebody/70 hover:text-teal hover:bg-teal/5'"
+            @click="go(link.id)"
+            x-text="link.label"
+          ></button>
+        </template>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-2 sm:gap-3">
+        <div class="relative hidden md:block">
+          <input
+            type="search"
+            x-model="searchQuery"
+            @keydown.enter.prevent="go('shop')"
+            placeholder="Search systems…"
+            class="w-48 rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/20 lg:w-56"
+          />
+          <svg class="pointer-events-none absolute left-2.5 top-2.5 h-4 w-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+
+        <button type="button" class="relative rounded-lg p-2 text-teal transition hover:bg-teal/5" @click="cartOpen = true" aria-label="Open cart">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span
+            x-show="cartCount > 0"
+            x-transition
+            class="absolute -right-0.5 -top-0.5 flex h-5 min-w-[1.25rem] items-center justify-center rounded-md bg-cyanaccent px-1 text-[11px] font-bold text-white"
+            x-text="cartCount"
+          ></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div x-show="mobileNav" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="border-t border-teal/10 bg-white lg:hidden">
+      <div class="space-y-1 px-4 py-3">
+        <div class="relative mb-2 md:hidden">
+          <input type="search" x-model="searchQuery" @keydown.enter.prevent="go('shop'); mobileNav = false" placeholder="Search systems…" class="w-full rounded-lg border border-slate-200 bg-soft py-2 pl-9 pr-3 text-sm outline-none focus:border-teal" />
+          <svg class="pointer-events-none absolute left-2.5 top-2.5 h-4 w-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <template x-for="link in navLinks" :key="'m-' + link.id">
+          <button type="button" class="block w-full rounded-md px-3 py-2.5 text-left text-sm font-medium" :class="currentTab === link.id ? 'bg-teal/10 text-teal' : 'text-slatebody/80'" @click="go(link.id); mobileNav = false" x-text="link.label"></button>
+        </template>
+      </div>
+    </div>
+  </header>
+
+  <main class="min-h-[70vh]">
+
+    <!-- ========== HOME ========== -->
+    <section x-show="currentTab === 'home'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+
+      <!-- Hero -->
+      <div class="relative min-h-[88vh] overflow-hidden">
+        <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline poster="">
+          <source src="https://cdn.coverr.co/videos/coverr-bubbles-rising-in-water-5584/1080p.mp4" type="video/mp4" />
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-water-bubbles-rising-up-to-the-surface-of-the-water-2717-large.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-video-mask absolute inset-0"></div>
+        <div class="bubble h-8 w-8 left-[12%] bottom-[20%]" style="animation-delay: 0s"></div>
+        <div class="bubble h-14 w-14 left-[28%] bottom-[35%]" style="animation-delay: 1.2s"></div>
+        <div class="bubble h-6 w-6 left-[55%] bottom-[25%]" style="animation-delay: 2s"></div>
+        <div class="bubble h-10 w-10 left-[75%] bottom-[40%]" style="animation-delay: 0.6s"></div>
+        <div class="bubble h-5 w-5 left-[88%] bottom-[18%]" style="animation-delay: 1.8s"></div>
+
+        <div class="relative mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-center px-4 py-20 lg:px-6">
+          <p class="animate-fade-up mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-cyanaccent">DBROTherapy</p>
+          <h1 class="animate-fade-up-delay font-display max-w-3xl text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+            Advanced Molecular Hydrogen &amp; Oxyhydrogen Systems
+          </h1>
+          <p class="animate-fade-up-delay-2 mt-5 max-w-xl text-lg text-white/85">
+            Find Your Path. Heal. Grow. — clinical-grade H₂ and Brown's Gas therapy for daily wellness, athletic recovery, and professional care.
+          </p>
+          <div class="animate-fade-up-delay-2 mt-8 flex flex-wrap gap-3">
+            <button type="button" @click="go('shop')" class="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-teal shadow-soft transition hover:bg-cyanaccent hover:text-white">
+              Browse Systems
+            </button>
+            <button type="button" @click="benefitTab = 'mitochondrial'; go('science')" class="rounded-lg border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
+              Watch Clinical Demo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="border-y border-teal/10 bg-white">
+        <div class="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-10 sm:grid-cols-4 lg:px-6">
+          <template x-for="badge in trustBadges" :key="badge.label">
+            <div class="text-center">
+              <p class="font-display text-2xl font-semibold text-teal" x-text="badge.value"></p>
+              <p class="mt-1 text-sm text-slatebody/65" x-text="badge.label"></p>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Featured devices -->
+      <div class="mx-auto max-w-7xl px-4 py-16 lg:px-6">
+        <div class="mb-10 max-w-2xl">
+          <h2 class="font-display text-3xl font-semibold text-teal sm:text-4xl">Featured Systems</h2>
+          <p class="mt-3 text-slatebody/70">Three precision-engineered platforms — from personal travel hydration to dual-user clinical biohacking.</p>
+        </div>
+        <div class="grid gap-8 md:grid-cols-3">
+          <template x-for="(product, idx) in featuredProducts" :key="product.id">
+            <article class="group overflow-hidden rounded-2xl bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-lg">
+              <button type="button" class="block w-full text-left" @click="openProduct(product.id)">
+                <div class="relative aspect-[4/3] overflow-hidden" :class="product.gradient">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="h-28 w-20 rounded-xl border border-white/30 bg-white/15 shadow-lg backdrop-blur-sm transition group-hover:scale-105 sm:h-32 sm:w-24">
+                      <div class="mx-auto mt-3 h-8 w-12 rounded-md bg-white/25"></div>
+                      <div class="mx-auto mt-4 h-2 w-10 rounded bg-cyanaccent/60"></div>
+                      <div class="mx-auto mt-2 h-2 w-8 rounded bg-white/30"></div>
+                    </div>
+                  </div>
+                  <span class="absolute left-3 top-3 rounded-md bg-white/95 px-2.5 py-1 text-xs font-semibold text-teal" x-text="product.flowBadge"></span>
+                </div>
+                <div class="p-5">
+                  <h3 class="font-display text-xl font-semibold text-slatebody" x-text="product.name"></h3>
+                  <p class="mt-2 text-sm leading-relaxed text-slatebody/65" x-text="product.tagline"></p>
+                  <div class="mt-4 flex items-center justify-between">
+                    <span class="text-lg font-semibold text-teal" x-text="formatMoney(product.price)"></span>
+                    <span class="text-sm font-medium text-sage">View details →</span>
+                  </div>
+                </div>
+              </button>
+              <div class="border-t border-slate-100 px-5 py-3">
+                <button type="button" class="w-full rounded-lg bg-teal py-2.5 text-sm font-semibold text-white transition hover:bg-teal-dark" @click="addToCart(product)">
+                  Add to Cart
+                </button>
+              </div>
+            </article>
+          </template>
+        </div>
+      </div>
+
+      <!-- Interactive benefits -->
+      <div class="border-t border-teal/10 bg-white">
+        <div class="mx-auto max-w-7xl px-4 py-16 lg:px-6">
+          <div class="mb-8 max-w-2xl">
+            <h2 class="font-display text-3xl font-semibold text-teal">Health Benefits</h2>
+            <p class="mt-3 text-slatebody/70">Explore how molecular hydrogen and oxyhydrogen support energy, recovery, cognition, and longevity.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-1">
+            <template x-for="tab in benefitTabs" :key="tab.id">
+              <button
+                type="button"
+                class="rounded-t-lg px-4 py-2.5 text-sm font-medium transition"
+                :class="benefitTab === tab.id ? 'bg-teal text-white' : 'text-slatebody/60 hover:bg-teal/5 hover:text-teal'"
+                @click="benefitTab = tab.id"
+                x-text="tab.label"
+              ></button>
+            </template>
+          </div>
+          <div class="mt-8 grid items-center gap-10 lg:grid-cols-2">
+            <div
+              x-show="true"
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 translate-y-2"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              :key="benefitTab"
+            >
+              <template x-for="tab in benefitTabs" :key="'content-' + tab.id">
+                <div x-show="benefitTab === tab.id" x-transition>
+                  <h3 class="font-display text-2xl font-semibold text-slatebody" x-text="tab.title"></h3>
+                  <p class="mt-4 leading-relaxed text-slatebody/70" x-text="tab.body"></p>
+                  <ul class="mt-6 space-y-3">
+                    <template x-for="point in tab.points" :key="point">
+                      <li class="flex gap-3 text-sm text-slatebody/80">
+                        <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sage"></span>
+                        <span x-text="point"></span>
+                      </li>
+                    </template>
+                  </ul>
+                  <button type="button" class="mt-8 rounded-lg border border-teal px-5 py-2.5 text-sm font-semibold text-teal transition hover:bg-teal hover:text-white" @click="go('science')">
+                    Read the Science
+                  </button>
+                </div>
+              </template>
+            </div>
+            <div class="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-soft" :class="activeBenefit.visual">
+              <div class="absolute inset-0 flex flex-col items-end justify-between p-6">
+                <span class="rounded-md bg-white/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal" x-text="activeBenefit.label"></span>
+                <p class="max-w-xs text-right text-lg font-medium text-white drop-shadow" x-text="activeBenefit.caption"></p>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SHOP ========== -->
+    <section x-show="currentTab === 'shop'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="mx-auto max-w-7xl px-4 py-12 lg:px-6">
+      <div class="mb-8">
+        <h1 class="font-display text-3xl font-semibold text-teal sm:text-4xl">Shop All</h1>
+        <p class="mt-2 text-slatebody/70">Machines, accessories, and therapy essentials — filter by category, flow, and budget.</p>
+      </div>
+
+      <div class="flex flex-col gap-8 lg:flex-row">
+        <!-- Filters -->
+        <aside class="w-full shrink-0 space-y-6 rounded-2xl bg-white p-5 shadow-soft lg:w-64">
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-teal">Category</h3>
+            <div class="mt-3 space-y-2">
+              <template x-for="cat in categories" :key="cat">
+                <label class="flex cursor-pointer items-center gap-2 text-sm text-slatebody/80">
+                  <input type="checkbox" class="rounded border-slate-300 text-teal focus:ring-teal" :value="cat" x-model="filters.categories" />
+                  <span x-text="cat"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-teal">Flow Rate</h3>
+            <div class="mt-3 space-y-2">
+              <template x-for="flow in flowOptions" :key="flow">
+                <label class="flex cursor-pointer items-center gap-2 text-sm text-slatebody/80">
+                  <input type="checkbox" class="rounded border-slate-300 text-teal focus:ring-teal" :value="flow" x-model="filters.flows" />
+                  <span x-text="flow"></span>
+                </label>
+              </template>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-teal">Price Range</h3>
+            <div class="mt-3">
+              <input type="range" min="0" max="8000" step="100" x-model.number="filters.maxPrice" class="w-full" />
+              <div class="mt-2 flex justify-between text-sm text-slatebody/60">
+                <span>$0</span>
+                <span x-text="'Up to ' + formatMoney(filters.maxPrice)"></span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="w-full rounded-lg border border-slate-200 py-2 text-sm font-medium text-slatebody/70 hover:border-teal hover:text-teal" @click="resetFilters()">
+            Reset Filters
+          </button>
+        </aside>
+
+        <!-- Grid -->
+        <div class="flex-1">
+          <p class="mb-4 text-sm text-slatebody/60">
+            <span x-text="filteredProducts.length"></span> products
+            <span x-show="searchQuery.trim()"> matching “<span x-text="searchQuery"></span>”</span>
+          </p>
+          <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            <template x-for="product in filteredProducts" :key="product.id">
+              <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft">
+                <button type="button" class="relative aspect-[4/3] w-full overflow-hidden text-left" :class="product.gradient" @click="quickView = product">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="h-24 w-16 rounded-lg border border-white/30 bg-white/15 sm:h-28 sm:w-20"></div>
+                  </div>
+                  <span class="absolute left-3 top-3 rounded-md bg-white/95 px-2 py-1 text-[11px] font-semibold text-teal" x-text="product.category"></span>
+                  <span x-show="product.flowBadge" class="absolute bottom-3 right-3 rounded-md bg-teal/90 px-2 py-1 text-[11px] font-semibold text-white" x-text="product.flowBadge"></span>
+                </button>
+                <div class="flex flex-1 flex-col p-4">
+                  <h3 class="font-display text-lg font-semibold text-slatebody" x-text="product.name"></h3>
+                  <p class="mt-1 line-clamp-2 text-sm text-slatebody/60" x-text="product.tagline"></p>
+                  <p class="mt-3 text-lg font-semibold text-teal" x-text="formatMoney(product.price)"></p>
+                  <div class="mt-auto flex gap-2 pt-4">
+                    <button type="button" class="flex-1 rounded-lg border border-teal/30 py-2 text-sm font-medium text-teal hover:bg-teal/5" @click="quickView = product">Quick View</button>
+                    <button type="button" class="flex-1 rounded-lg bg-teal py-2 text-sm font-semibold text-white hover:bg-teal-dark" @click="addToCart(product)">Add to Cart</button>
+                  </div>
+                </div>
+              </article>
+            </template>
+          </div>
+          <p x-show="filteredProducts.length === 0" class="rounded-2xl bg-white p-10 text-center text-slatebody/60 shadow-soft">
+            No products match your filters. Try adjusting category or price range.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCIENCE ========== -->
+    <section x-show="currentTab === 'science'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+      <div class="border-b border-teal/10 bg-gradient-to-br from-teal to-teal-dark text-white">
+        <div class="mx-auto max-w-7xl px-4 py-16 lg:px-6">
+          <h1 class="font-display text-3xl font-semibold sm:text-4xl">Science &amp; Benefits</h1>
+          <p class="mt-3 max-w-2xl text-white/80">Peer-informed pathways for molecular hydrogen (H₂) and oxyhydrogen (Brown's Gas) in cellular wellness protocols.</p>
+        </div>
+      </div>
+      <div class="mx-auto max-w-7xl px-4 py-14 lg:px-6">
+        <div class="grid gap-8 md:grid-cols-2">
+          <template x-for="item in scienceCards" :key="item.title">
+            <article class="rounded-2xl bg-white p-6 shadow-soft">
+              <h3 class="font-display text-xl font-semibold text-teal" x-text="item.title"></h3>
+              <p class="mt-3 text-sm leading-relaxed text-slatebody/70" x-text="item.body"></p>
+              <button type="button" class="mt-4 inline-block text-sm font-semibold text-sage hover:text-sage-dark" @click="item.link.includes('Compare') ? go('compare') : go('science')" x-text="item.link"></button>
+            </article>
+          </template>
+        </div>
+        <div class="mt-12 overflow-hidden rounded-2xl bg-slatebody shadow-soft">
+          <div class="aspect-video bg-gradient-to-br from-teal-dark via-teal to-sage flex items-center justify-center">
+            <div class="text-center text-white">
+              <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/50">
+                <svg class="ml-1 h-7 w-7" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="font-display text-xl font-semibold">Clinical Demo — Oxyhydrogen Protocol</p>
+              <p class="mt-2 text-sm text-white/70">Prototype placeholder for embedded clinical walkthrough</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COMPARE ========== -->
+    <section x-show="currentTab === 'compare'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="mx-auto max-w-7xl px-4 py-12 lg:px-6">
+      <div class="mb-8">
+        <h1 class="font-display text-3xl font-semibold text-teal sm:text-4xl">Device Comparison Tool</h1>
+        <p class="mt-2 text-slatebody/70">Side-by-side specs for every DBROTherapy machine — choose the right flow and gas profile for your goals.</p>
+      </div>
+      <div class="overflow-x-auto rounded-2xl bg-white shadow-soft">
+        <table class="w-full min-w-[720px] text-left text-sm">
+          <thead>
+            <tr class="border-b border-slate-200 bg-soft">
+              <th class="px-5 py-4 font-semibold text-slatebody/50">Specification</th>
+              <template x-for="p in machines" :key="'th-' + p.id">
+                <th class="px-5 py-4">
+                  <button type="button" class="text-left" @click="openProduct(p.id)">
+                    <span class="block font-display text-base font-semibold text-teal" x-text="p.name"></span>
+                    <span class="mt-1 block text-xs font-normal text-slatebody/50" x-text="formatMoney(p.price)"></span>
+                  </button>
+                </th>
+              </template>
+            </tr>
+          </thead>
+          <tbody>
+            <template x-for="row in compareRows" :key="row.label">
+              <tr class="border-b border-slate-100">
+                <td class="px-5 py-4 font-medium text-slatebody/70" x-text="row.label"></td>
+                <template x-for="(val, i) in row.values" :key="row.label + i">
+                  <td class="px-5 py-4 text-slatebody" x-text="val"></td>
+                </template>
+              </tr>
+            </template>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="px-5 py-5"></td>
+              <template x-for="p in machines" :key="'ft-' + p.id">
+                <td class="px-5 py-5">
+                  <button type="button" class="w-full rounded-lg bg-teal py-2.5 text-sm font-semibold text-white hover:bg-teal-dark" @click="addToCart(p)">Add to Cart</button>
+                </td>
+              </template>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCT DETAIL ========== -->
+    <section x-show="currentTab === 'product-detail' && selectedProduct" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="mx-auto max-w-7xl px-4 py-12 lg:px-6">
+      <button type="button" class="mb-6 text-sm font-medium text-teal hover:underline" @click="go('shop')">← Back to Shop</button>
+      <template x-if="selectedProduct">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <!-- Gallery -->
+          <div>
+            <div class="aspect-square overflow-hidden rounded-2xl shadow-soft" :class="selectedProduct.gradient">
+              <div class="flex h-full items-center justify-center">
+                <div class="relative">
+                  <div class="h-48 w-36 rounded-2xl border border-white/40 bg-white/20 shadow-xl backdrop-blur-sm sm:h-56 sm:w-40">
+                    <div class="mx-auto mt-5 h-12 w-20 rounded-lg bg-white/30" :class="galleryIndex === 1 ? 'ring-2 ring-cyanaccent' : ''"></div>
+                    <div class="mx-auto mt-8 h-2.5 w-16 rounded bg-cyanaccent/70"></div>
+                    <div class="mx-auto mt-3 h-2 w-12 rounded bg-white/40"></div>
+                    <div class="mx-auto mt-8 flex justify-center gap-1">
+                      <span class="h-1.5 w-1.5 rounded-full bg-white/50"></span>
+                      <span class="h-1.5 w-1.5 rounded-full bg-white/50"></span>
+                      <span class="h-1.5 w-1.5 rounded-full bg-white/50"></span>
+                    </div>
+                  </div>
+                  <p class="mt-4 text-center text-sm font-medium text-white/80" x-text="galleryLabels[galleryIndex]"></p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <template x-for="(label, i) in galleryLabels" :key="label">
+                <button
+                  type="button"
+                  class="h-16 flex-1 rounded-xl border-2 transition"
+                  :class="[selectedProduct.gradient, galleryIndex === i ? 'border-cyanaccent ring-2 ring-cyanaccent/40' : 'border-transparent opacity-70 hover:opacity-100']"
+                  @click="galleryIndex = i"
+                  :aria-label="label"
+                ></button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-wider text-sage" x-text="selectedProduct.category"></p>
+            <h1 class="mt-2 font-display text-3xl font-semibold text-slatebody sm:text-4xl" x-text="selectedProduct.name"></h1>
+            <p class="mt-3 text-slatebody/70" x-text="selectedProduct.tagline"></p>
+            <p class="mt-5 font-display text-3xl font-semibold text-teal" x-text="formatMoney(pdpTotal)"></p>
+            <p x-show="warrantyYears > 0" class="mt-1 text-sm text-sage" x-text="'+ ' + formatMoney(warrantyPrice) + ' extended warranty'"></p>
+
+            <div class="mt-6 flex flex-wrap items-center gap-4">
+              <div class="flex items-center rounded-lg border border-slate-200">
+                <button type="button" class="px-3 py-2 text-lg text-teal hover:bg-soft" @click="pdpQty = Math.max(1, pdpQty - 1)">−</button>
+                <span class="w-10 text-center font-semibold" x-text="pdpQty"></span>
+                <button type="button" class="px-3 py-2 text-lg text-teal hover:bg-soft" @click="pdpQty++">+</button>
+              </div>
+              <button type="button" class="rounded-lg bg-teal px-8 py-3 text-sm font-semibold text-white hover:bg-teal-dark" @click="addToCart(selectedProduct, pdpQty, warrantyYears)">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="mt-8">
+              <h3 class="text-sm font-semibold text-slatebody">Warranty Addon</h3>
+              <div class="mt-3 grid gap-2 sm:grid-cols-3">
+                <button type="button" class="rounded-lg border px-3 py-3 text-sm transition" :class="warrantyYears === 0 ? 'border-teal bg-teal/5 text-teal' : 'border-slate-200 text-slatebody/70'" @click="warrantyYears = 0">
+                  Standard (1 yr)<br /><span class="text-xs opacity-70">Included</span>
+                </button>
+                <button type="button" class="rounded-lg border px-3 py-3 text-sm transition" :class="warrantyYears === 1 ? 'border-teal bg-teal/5 text-teal' : 'border-slate-200 text-slatebody/70'" @click="warrantyYears = 1">
+                  +1 Year<br /><span class="text-xs opacity-70" x-text="formatMoney(199)"></span>
+                </button>
+                <button type="button" class="rounded-lg border px-3 py-3 text-sm transition" :class="warrantyYears === 2 ? 'border-teal bg-teal/5 text-teal' : 'border-slate-200 text-slatebody/70'" @click="warrantyYears = 2">
+                  +2 Year<br /><span class="text-xs opacity-70" x-text="formatMoney(349)"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Accordions -->
+            <div class="mt-10 divide-y divide-slate-200 border-y border-slate-200">
+              <div>
+                <button type="button" class="flex w-full items-center justify-between py-4 text-left font-semibold text-slatebody" @click="accordion = accordion === 'specs' ? null : 'specs'">
+                  Technical Specifications
+                  <span x-text="accordion === 'specs' ? '−' : '+'"></span>
+                </button>
+                <div x-show="accordion === 'specs'" x-transition class="pb-4 text-sm text-slatebody/70">
+                  <ul class="space-y-2">
+                    <li><span class="font-medium text-slatebody">Gas Output:</span> <span x-text="selectedProduct.gasOutput"></span></li>
+                    <li><span class="font-medium text-slatebody">Flow Rate:</span> <span x-text="selectedProduct.flowRate"></span></li>
+                    <li><span class="font-medium text-slatebody">Purity:</span> <span x-text="selectedProduct.purity"></span></li>
+                    <li><span class="font-medium text-slatebody">Dual-User:</span> <span x-text="selectedProduct.dualUser"></span></li>
+                    <li><span class="font-medium text-slatebody">Controls:</span> <span x-text="selectedProduct.controls"></span></li>
+                    <li><span class="font-medium text-slatebody">Ideal For:</span> <span x-text="selectedProduct.idealUser"></span></li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <button type="button" class="flex w-full items-center justify-between py-4 text-left font-semibold text-slatebody" @click="accordion = accordion === 'includes' ? null : 'includes'">
+                  Package Inclusions
+                  <span x-text="accordion === 'includes' ? '−' : '+'"></span>
+                </button>
+                <div x-show="accordion === 'includes'" x-transition class="pb-4 text-sm text-slatebody/70">
+                  <ul class="space-y-2">
+                    <li class="flex gap-2"><span class="text-sage">✓</span> Medical-grade nasal cannula</li>
+                    <li class="flex gap-2"><span class="text-sage">✓</span> Deionized water starter kit</li>
+                    <li class="flex gap-2"><span class="text-sage">✓</span> Quick-start manual &amp; safety guide</li>
+                    <li class="flex gap-2"><span class="text-sage">✓</span> Power adapter (region-matched)</li>
+                    <li class="flex gap-2"><span class="text-sage">✓</span> 1-year medical warranty</li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <button type="button" class="flex w-full items-center justify-between py-4 text-left font-semibold text-slatebody" @click="accordion = accordion === 'research' ? null : 'research'">
+                  Scientific Research
+                  <span x-text="accordion === 'research' ? '−' : '+'"></span>
+                </button>
+                <div x-show="accordion === 'research'" x-transition class="pb-4 text-sm text-slatebody/70">
+                  <p>Selected abstracts and white papers on molecular hydrogen inhalation and Brown's Gas protocols are available for clinical and wellness reference.</p>
+                  <a href="#" @click.prevent class="mt-3 inline-flex items-center gap-2 rounded-lg border border-teal px-4 py-2 text-sm font-semibold text-teal hover:bg-teal hover:text-white">
+                    Download Research PDF (placeholder)
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section x-show="currentTab === 'faq'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="mx-auto max-w-3xl px-4 py-12 lg:px-6">
+      <h1 class="font-display text-3xl font-semibold text-teal sm:text-4xl">FAQ</h1>
+      <p class="mt-2 text-slatebody/70">Common questions about DBROTherapy systems, shipping, and usage.</p>
+      <div class="mt-8 divide-y divide-slate-200 rounded-2xl bg-white shadow-soft">
+        <template x-for="(item, i) in faqs" :key="item.q">
+          <div class="px-5">
+            <button type="button" class="flex w-full items-center justify-between py-5 text-left font-semibold text-slatebody" @click="faqOpen = faqOpen === i ? null : i">
+              <span x-text="item.q"></span>
+              <span class="ml-4 text-teal" x-text="faqOpen === i ? '−' : '+'"></span>
+            </button>
+            <div x-show="faqOpen === i" x-transition class="pb-5 text-sm leading-relaxed text-slatebody/70" x-text="item.a"></div>
+          </div>
+        </template>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="mt-8 border-t border-teal/10 bg-white">
+    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-10 sm:flex-row sm:items-center lg:px-6">
+      <div>
+        <img src="logo.png" alt="DBROTherapy" class="h-9 w-auto" />
+        <p class="mt-2 text-sm text-slatebody/55">Find Your Path. Heal. Grow.</p>
+      </div>
+      <div class="flex flex-wrap gap-4 text-sm text-slatebody/60">
+        <button type="button" class="hover:text-teal" @click="go('shop')">Shop</button>
+        <button type="button" class="hover:text-teal" @click="go('science')">Science</button>
+        <button type="button" class="hover:text-teal" @click="go('compare')">Compare</button>
+        <button type="button" class="hover:text-teal" @click="go('faq')">FAQ</button>
+      </div>
+      <p class="text-xs text-slatebody/40">© 2026 DBROTherapy. Prototype storefront — not a live checkout.</p>
+    </div>
+  </footer>
+
+  <!-- ========== CART DRAWER ========== -->
+  <div x-show="cartOpen" class="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <div class="absolute inset-0 bg-slatebody/40" x-show="cartOpen" x-transition.opacity @click="cartOpen = false"></div>
+    <div
+      class="absolute right-0 top-0 flex h-full w-full max-w-md flex-col bg-white shadow-drawer"
+      x-show="cartOpen"
+      x-transition:enter="transition transform ease-out duration-300"
+      x-transition:enter-start="translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition transform ease-in duration-200"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+    >
+      <div class="flex items-center justify-between border-b border-slate-100 px-5 py-4">
+        <h2 class="font-display text-xl font-semibold text-teal">Your Cart</h2>
+        <button type="button" class="rounded-md p-2 text-slatebody/50 hover:bg-soft hover:text-teal" @click="cartOpen = false" aria-label="Close cart">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto px-5 py-4">
+        <template x-if="cart.length === 0">
+          <p class="py-12 text-center text-sm text-slatebody/55">Your cart is empty. Browse systems to get started.</p>
+        </template>
+        <ul class="space-y-4">
+          <template x-for="(item, index) in cart" :key="item.uid">
+            <li class="flex gap-3 rounded-xl border border-slate-100 p-3">
+              <div class="h-16 w-16 shrink-0 rounded-lg" :class="item.gradient"></div>
+              <div class="min-w-0 flex-1">
+                <p class="truncate font-semibold text-slatebody" x-text="item.name"></p>
+                <p x-show="item.warrantyYears > 0" class="text-xs text-sage" x-text="'+' + item.warrantyYears + ' yr warranty'"></p>
+                <p class="text-sm text-teal" x-text="formatMoney(item.unitPrice)"></p>
+                <div class="mt-2 flex items-center gap-2">
+                  <button type="button" class="h-7 w-7 rounded border border-slate-200 text-sm hover:bg-soft" @click="updateQty(index, -1)">−</button>
+                  <span class="w-6 text-center text-sm font-medium" x-text="item.qty"></span>
+                  <button type="button" class="h-7 w-7 rounded border border-slate-200 text-sm hover:bg-soft" @click="updateQty(index, 1)">+</button>
+                  <button type="button" class="ml-auto text-xs text-slatebody/40 hover:text-red-600" @click="removeFromCart(index)">Remove</button>
+                </div>
+              </div>
+            </li>
+          </template>
+        </ul>
+      </div>
+
+      <div class="border-t border-slate-100 px-5 py-4">
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-slatebody/60">Subtotal</span><span class="font-semibold" x-text="formatMoney(subtotal)"></span></div>
+          <div class="flex justify-between"><span class="text-slatebody/60">Estimated Shipping</span><span class="font-medium text-sage">$0 / Free</span></div>
+          <div class="flex justify-between"><span class="text-slatebody/60">Tax Preview (8%)</span><span x-text="formatMoney(taxPreview)"></span></div>
+          <div class="flex justify-between border-t border-slate-100 pt-2 text-base"><span class="font-semibold">Estimated Total</span><span class="font-semibold text-teal" x-text="formatMoney(estimatedTotal)"></span></div>
+        </div>
+        <button
+          type="button"
+          class="mt-4 w-full rounded-lg bg-teal py-3 text-sm font-semibold text-white transition hover:bg-teal-dark disabled:cursor-not-allowed disabled:opacity-40"
+          :disabled="cart.length === 0"
+          @click="openCheckout()"
+        >
+          Proceed to Interactive Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== QUICK VIEW MODAL ========== -->
+  <div x-show="quickView" class="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-slatebody/40" x-show="quickView" x-transition.opacity @click="quickView = null"></div>
+    <div
+      class="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white shadow-drawer"
+      x-show="quickView"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 scale-95"
+      x-transition:enter-end="opacity-100 scale-100"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100 scale-100"
+      x-transition:leave-end="opacity-0 scale-95"
+    >
+      <template x-if="quickView">
+        <div>
+          <div class="relative aspect-[16/10]" :class="quickView.gradient">
+            <button type="button" class="absolute right-3 top-3 rounded-md bg-white/90 p-2 text-slatebody hover:bg-white" @click="quickView = null" aria-label="Close">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <span x-show="quickView.flowBadge" class="absolute bottom-3 left-3 rounded-md bg-white/95 px-2.5 py-1 text-xs font-semibold text-teal" x-text="quickView.flowBadge"></span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-semibold text-slatebody" x-text="quickView.name"></h3>
+            <p class="mt-2 text-sm text-slatebody/65" x-text="quickView.tagline"></p>
+            <p class="mt-4 text-xl font-semibold text-teal" x-text="formatMoney(quickView.price)"></p>
+            <div class="mt-6 flex gap-3">
+              <button type="button" class="flex-1 rounded-lg border border-teal py-2.5 text-sm font-semibold text-teal hover:bg-teal/5" @click="openProduct(quickView.id); quickView = null">Full Details</button>
+              <button type="button" class="flex-1 rounded-lg bg-teal py-2.5 text-sm font-semibold text-white hover:bg-teal-dark" @click="addToCart(quickView); quickView = null">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- ========== CHECKOUT ========== -->
+  <div x-show="checkoutOpen" class="fixed inset-0 z-[60] overflow-y-auto bg-soft" role="dialog" aria-modal="true" aria-label="Checkout">
+    <div class="mx-auto min-h-full max-w-3xl px-4 py-8 lg:px-6">
+      <div class="mb-6 flex items-center justify-between">
+        <div>
+          <img src="logo.png" alt="DBROTherapy" class="h-8 w-auto" />
+          <p class="mt-1 text-xs text-slatebody/50">Interactive Simulated Checkout</p>
+        </div>
+        <button type="button" class="rounded-lg border border-slate-200 px-3 py-2 text-sm text-slatebody/70 hover:border-teal hover:text-teal" @click="checkoutOpen = false" x-show="!orderComplete">
+          Close
+        </button>
+      </div>
+
+      <!-- Success -->
+      <div x-show="orderComplete" x-transition class="rounded-2xl bg-white p-8 text-center shadow-soft sm:p-12">
+        <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-sage/15 text-sage">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h2 class="font-display text-2xl font-semibold text-teal">Order Confirmed</h2>
+        <p class="mt-2 text-slatebody/70">Thank you — your DBROTherapy system is queued for free global shipping.</p>
+        <div class="mx-auto mt-6 max-w-sm rounded-xl bg-soft p-4 text-left text-sm">
+          <p><span class="text-slatebody/50">Order #</span> <span class="font-semibold" x-text="orderId"></span></p>
+          <p class="mt-2"><span class="text-slatebody/50">Email</span> <span class="font-medium" x-text="checkout.email"></span></p>
+          <p class="mt-2"><span class="text-slatebody/50">Total</span> <span class="font-semibold text-teal" x-text="formatMoney(orderTotal)"></span></p>
+          <p class="mt-2"><span class="text-slatebody/50">Payment</span> <span x-text="checkout.payment === 'apple' ? 'Apple Pay' : 'Credit Card'"></span></p>
+        </div>
+        <button type="button" class="mt-8 rounded-lg bg-teal px-6 py-3 text-sm font-semibold text-white hover:bg-teal-dark" @click="finishOrder()">
+          Continue Shopping
+        </button>
+      </div>
+
+      <!-- Steps -->
+      <div x-show="!orderComplete">
+        <div class="mb-8 flex items-center gap-2">
+          <template x-for="(step, i) in checkoutSteps" :key="step">
+            <div class="flex flex-1 items-center gap-2">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold" :class="checkoutStep >= i ? 'bg-teal text-white' : 'bg-slate-200 text-slatebody/50'" x-text="i + 1"></div>
+              <span class="hidden text-xs font-medium sm:inline" :class="checkoutStep >= i ? 'text-teal' : 'text-slatebody/40'" x-text="step"></span>
+              <div x-show="i < checkoutSteps.length - 1" class="checkout-step-line hidden flex-1 sm:block" :class="checkoutStep > i ? 'active' : ''"></div>
+            </div>
+          </template>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-5">
+          <div class="rounded-2xl bg-white p-6 shadow-soft lg:col-span-3">
+            <!-- Step 0: Contact -->
+            <div x-show="checkoutStep === 0" x-transition>
+              <h2 class="font-display text-xl font-semibold text-slatebody">Contact Info</h2>
+              <div class="mt-5 space-y-4">
+                <div>
+                  <label class="mb-1 block text-sm font-medium">Email</label>
+                  <input type="email" x-model="checkout.email" class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" placeholder="you@example.com" />
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label class="mb-1 block text-sm font-medium">First name</label>
+                    <input type="text" x-model="checkout.firstName" class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" />
+                  </div>
+                  <div>
+                    <label class="mb-1 block text-sm font-medium">Last name</label>
+                    <input type="text" x-model="checkout.lastName" class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" />
+                  </div>
+                </div>
+                <label class="flex items-center gap-2 text-sm text-slatebody/70">
+                  <input type="checkbox" x-model="checkout.newsletter" class="rounded border-slate-300 text-teal focus:ring-teal" />
+                  Email me wellness tips &amp; protocol updates
+                </label>
+              </div>
+              <button type="button" class="mt-6 rounded-lg bg-teal px-5 py-2.5 text-sm font-semibold text-white hover:bg-teal-dark disabled:opacity-40" :disabled="!checkout.email || !checkout.firstName" @click="checkoutStep = 1">
+                Continue to Shipping
+              </button>
+            </div>
+
+            <!-- Step 1: Shipping -->
+            <div x-show="checkoutStep === 1" x-transition>
+              <h2 class="font-display text-xl font-semibold text-slatebody">Shipping Address</h2>
+              <div class="mt-5 space-y-4">
+                <div>
+                  <label class="mb-1 block text-sm font-medium">Address</label>
+                  <input type="text" x-model="checkout.address" class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" placeholder="Street address" />
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label class="mb-1 block text-sm font-medium">City</label>
+                    <input type="text" x-model="checkout.city" class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" />
+                  </div>
+                  <div>
+                    <label class="mb-1 block text-sm font-medium">Postal code</label>
+                    <input type="text" x-model="checkout.postal" class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" />
+                  </div>
+                </div>
+                <div>
+                  <label class="mb-1 block text-sm font-medium">Country</label>
+                  <select x-model="checkout.country" class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-teal focus:ring-2 focus:ring-teal/20">
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>United Kingdom</option>
+                    <option>Australia</option>
+                    <option>Singapore</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mt-6 flex gap-3">
+                <button type="button" class="rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-medium hover:border-teal" @click="checkoutStep = 0">Back</button>
+                <button type="button" class="rounded-lg bg-teal px-5 py-2.5 text-sm font-semibold text-white hover:bg-teal-dark disabled:opacity-40" :disabled="!checkout.address || !checkout.city" @click="checkoutStep = 2">
+                  Continue to Payment
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Payment -->
+            <div x-show="checkoutStep === 2" x-transition>
+              <h2 class="font-display text-xl font-semibold text-slatebody">Payment Method</h2>
+              <div class="mt-5 flex gap-3">
+                <button type="button" class="flex-1 rounded-lg border px-4 py-3 text-sm font-semibold transition" :class="checkout.payment === 'card' ? 'border-teal bg-teal/5 text-teal' : 'border-slate-200'" @click="checkout.payment = 'card'">
+                  Credit Card
+                </button>
+                <button type="button" class="flex-1 rounded-lg border px-4 py-3 text-sm font-semibold transition" :class="checkout.payment === 'apple' ? 'border-teal bg-teal/5 text-teal' : 'border-slate-200'" @click="checkout.payment = 'apple'">
+                  Apple Pay
+                </button>
+              </div>
+
+              <div x-show="checkout.payment === 'card'" x-transition class="mt-5 space-y-4">
+                <div>
+                  <label class="mb-1 block text-sm font-medium">Card number</label>
+                  <input type="text" x-model="checkout.cardNumber" maxlength="19" class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" placeholder="4242 4242 4242 4242" />
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label class="mb-1 block text-sm font-medium">Expiry</label>
+                    <input type="text" x-model="checkout.expiry" class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" placeholder="MM/YY" />
+                  </div>
+                  <div>
+                    <label class="mb-1 block text-sm font-medium">CVC</label>
+                    <input type="text" x-model="checkout.cvc" maxlength="4" class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" placeholder="123" />
+                  </div>
+                </div>
+              </div>
+
+              <div x-show="checkout.payment === 'apple'" x-transition class="mt-5 rounded-xl border border-dashed border-slate-300 bg-soft p-6 text-center">
+                <p class="text-sm font-medium text-slatebody">Apple Pay mockup</p>
+                <p class="mt-1 text-xs text-slatebody/50">Tap Complete Order to simulate Face ID / Touch ID approval.</p>
+                <div class="mx-auto mt-4 flex h-12 w-40 items-center justify-center rounded-lg bg-slatebody text-sm font-semibold text-white">
+                  Pay
+                </div>
+              </div>
+
+              <div class="mt-6 flex gap-3">
+                <button type="button" class="rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-medium hover:border-teal" @click="checkoutStep = 1">Back</button>
+                <button type="button" class="rounded-lg bg-sage px-5 py-2.5 text-sm font-semibold text-white hover:bg-sage-dark" @click="completeOrder()">
+                  Complete Order
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order summary -->
+          <div class="rounded-2xl bg-white p-5 shadow-soft lg:col-span-2">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-teal">Order Summary</h3>
+            <ul class="mt-4 space-y-3">
+              <template x-for="item in cart" :key="'co-' + item.uid">
+                <li class="flex justify-between gap-2 text-sm">
+                  <span class="text-slatebody/80"><span x-text="item.qty"></span>× <span x-text="item.name"></span></span>
+                  <span class="shrink-0 font-medium" x-text="formatMoney(item.unitPrice * item.qty)"></span>
+                </li>
+              </template>
+            </ul>
+            <div class="mt-4 space-y-2 border-t border-slate-100 pt-4 text-sm">
+              <div class="flex justify-between"><span class="text-slatebody/55">Subtotal</span><span x-text="formatMoney(subtotal)"></span></div>
+              <div class="flex justify-between"><span class="text-slatebody/55">Shipping</span><span class="text-sage">Free</span></div>
+              <div class="flex justify-between"><span class="text-slatebody/55">Tax</span><span x-text="formatMoney(taxPreview)"></span></div>
+              <div class="flex justify-between text-base font-semibold"><span>Total</span><span class="text-teal" x-text="formatMoney(estimatedTotal)"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div
+    x-show="toast"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 translate-y-2"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="fixed bottom-6 left-1/2 z-[70] -translate-x-1/2 rounded-lg bg-teal px-5 py-3 text-sm font-medium text-white shadow-lg"
+    x-text="toast"
+  ></div>
+
+  <script>
+    function dbroStore() {
+      const products = [
+        {
+          id: 'h2-lite',
+          name: 'DBRO H₂-Lite',
+          tagline: 'Daily Cellular Hydration & Personal Travel.',
+          price: 1299,
+          category: 'Machines',
+          flow: '300–600 ml/min',
+          flowBadge: '300–600 ml/min',
+          flowTier: 'Entry',
+          gradient: 'product-gradient-1',
+          gasOutput: 'Pure H₂',
+          flowRate: '300–600 ml/min',
+          purity: '99.99%',
+          dualUser: 'No',
+          controls: 'LED panel',
+          idealUser: 'Personal / Travel',
+          featured: true,
+        },
+        {
+          id: 'oxy-pro',
+          name: 'DBRO OxyHydrogen Pro',
+          tagline: 'Deep Respiratory Support & Inflammation Reduction.',
+          price: 2899,
+          category: 'Machines',
+          flow: '1200–1800 ml/min',
+          flowBadge: '1200–1800 ml/min',
+          flowTier: 'Pro',
+          gradient: 'product-gradient-2',
+          gasOutput: "Oxyhydrogen / Brown's Gas",
+          flowRate: '1200–1800 ml/min',
+          purity: '99.99%',
+          dualUser: 'No',
+          controls: 'Touchscreen',
+          idealUser: 'Athlete',
+          featured: true,
+        },
+        {
+          id: 'hydro-max',
+          name: 'DBRO Hydro-Max 3000',
+          tagline: 'Dual-User Clinical Biohacking System.',
+          price: 5499,
+          category: 'Machines',
+          flow: '3000 ml/min',
+          flowBadge: '3000 ml/min',
+          flowTier: 'Clinical',
+          gradient: 'product-gradient-3',
+          gasOutput: "H₂ + Oxyhydrogen",
+          flowRate: '3000 ml/min',
+          purity: '99.99%',
+          dualUser: 'Yes',
+          controls: 'Touchscreen',
+          idealUser: 'Clinic',
+          featured: true,
+        },
+        {
+          id: 'cannula-pack',
+          name: 'Nasal Cannula 5-Pack',
+          tagline: 'Soft medical-grade cannulas for daily H₂ sessions.',
+          price: 39,
+          category: 'Nasal Cannulas',
+          flow: '',
+          flowBadge: '',
+          flowTier: '',
+          gradient: 'product-gradient-acc',
+          gasOutput: '—',
+          flowRate: '—',
+          purity: '—',
+          dualUser: '—',
+          controls: '—',
+          idealUser: 'All users',
+          featured: false,
+        },
+        {
+          id: 'bubbler',
+          name: 'Water Bubbler Chamber',
+          tagline: 'Humidified gas delivery for longer comfort sessions.',
+          price: 89,
+          category: 'Water Bubblers',
+          flow: '',
+          flowBadge: '',
+          flowTier: '',
+          gradient: 'product-gradient-acc',
+          gasOutput: '—',
+          flowRate: '—',
+          purity: '—',
+          dualUser: '—',
+          controls: '—',
+          idealUser: 'All users',
+          featured: false,
+        },
+        {
+          id: 'di-water',
+          name: 'Deionized Water Kit (6L)',
+          tagline: 'Lab-grade refill kit optimized for electrolysis cells.',
+          price: 49,
+          category: 'Accessories',
+          flow: '',
+          flowBadge: '',
+          flowTier: '',
+          gradient: 'product-gradient-acc',
+          gasOutput: '—',
+          flowRate: '—',
+          purity: '—',
+          dualUser: '—',
+          controls: '—',
+          idealUser: 'All users',
+          featured: false,
+        },
+        {
+          id: 'travel-case',
+          name: 'Travel Hard Case',
+          tagline: 'Protective shell sized for H₂-Lite and accessories.',
+          price: 129,
+          category: 'Accessories',
+          flow: '',
+          flowBadge: '',
+          flowTier: '',
+          gradient: 'product-gradient-acc',
+          gasOutput: '—',
+          flowRate: '—',
+          purity: '—',
+          dualUser: '—',
+          controls: '—',
+          idealUser: 'Travel',
+          featured: false,
+        },
+        {
+          id: 'dual-cannula',
+          name: 'Dual-User Cannula Splitter',
+          tagline: 'Y-splitter kit for Hydro-Max simultaneous therapy.',
+          price: 59,
+          category: 'Nasal Cannulas',
+          flow: '',
+          flowBadge: '',
+          flowTier: '',
+          gradient: 'product-gradient-acc',
+          gasOutput: '—',
+          flowRate: '—',
+          purity: '—',
+          dualUser: 'Yes',
+          controls: '—',
+          idealUser: 'Clinic',
+          featured: false,
+        },
+      ];
+
+      return {
+        products,
+        currentTab: 'home',
+        mobileNav: false,
+        cartOpen: false,
+        checkoutOpen: false,
+        quickView: null,
+        searchQuery: '',
+        cart: [],
+        toast: null,
+        toastTimer: null,
+        benefitTab: 'mitochondrial',
+        selectedProductId: null,
+        galleryIndex: 0,
+        galleryLabels: ['Front', 'Side', 'Controls', 'In use'],
+        pdpQty: 1,
+        warrantyYears: 0,
+        accordion: 'specs',
+        faqOpen: 0,
+        checkoutStep: 0,
+        orderComplete: false,
+        orderId: '',
+        orderTotal: 0,
+        checkoutSteps: ['Contact', 'Shipping', 'Payment'],
+        checkout: {
+          email: '',
+          firstName: '',
+          lastName: '',
+          newsletter: true,
+          address: '',
+          city: '',
+          postal: '',
+          country: 'United States',
+          payment: 'card',
+          cardNumber: '',
+          expiry: '',
+          cvc: '',
+        },
+        filters: {
+          categories: [],
+          flows: [],
+          maxPrice: 8000,
+        },
+        categories: ['Machines', 'Accessories', 'Nasal Cannulas', 'Water Bubblers'],
+        flowOptions: ['300–600 ml/min', '1200–1800 ml/min', '3000 ml/min'],
+        navLinks: [
+          { id: 'home', label: 'Home' },
+          { id: 'shop', label: 'Shop All' },
+          { id: 'science', label: 'Science & Benefits' },
+          { id: 'compare', label: 'Comparison Tool' },
+          { id: 'faq', label: 'FAQ' },
+        ],
+        trustBadges: [
+          { value: '3000 ml/min', label: 'Peak Flow Capacity' },
+          { value: '99.99%', label: 'Pure H₂ Output' },
+          { value: 'Medical', label: 'Warranty Coverage' },
+          { value: 'Free', label: 'Global Shipping' },
+        ],
+        benefitTabs: [
+          {
+            id: 'mitochondrial',
+            label: 'Mitochondrial Energy',
+            title: 'Fuel cellular energy pathways',
+            body: 'Molecular hydrogen acts as a selective antioxidant, supporting mitochondrial efficiency and ATP production without disrupting beneficial signaling ROS.',
+            points: [
+              'Supports NAD⁺ / redox balance',
+              'Gentle daily inhalation protocols',
+              'Ideal paired with H₂-Lite travel use',
+            ],
+            visual: 'product-gradient-1',
+            caption: 'Cellular energy from the inside out',
+          },
+          {
+            id: 'athletic',
+            label: 'Athletic Recovery',
+            title: 'Recover faster between sessions',
+            body: 'Oxyhydrogen (Brown\'s Gas) delivery can support post-training inflammation modulation and perceived recovery for high-output athletes.',
+            points: [
+              '1200–1800 ml/min Pro flow band',
+              'Respiratory comfort during longer sessions',
+              'Fits evening recovery routines',
+            ],
+            visual: 'product-gradient-2',
+            caption: 'Train hard. Recover smarter.',
+          },
+          {
+            id: 'neuro',
+            label: 'Neuroprotection',
+            title: 'Support cognitive resilience',
+            body: 'Emerging research explores hydrogen\'s role in oxidative stress pathways relevant to focus, calm, and long-term neurological wellness protocols.',
+            points: [
+              'Quiet, at-home session design',
+              'Consistent purity at 99.99%',
+              'Clinician-friendly Hydro-Max option',
+            ],
+            visual: 'product-gradient-3',
+            caption: 'Clarity through molecular care',
+          },
+          {
+            id: 'aging',
+            label: 'Anti-Aging',
+            title: 'Longevity-minded daily rituals',
+            body: 'Integrate hydrogen therapy into a broader longevity stack — sleep, movement, nutrition — with systems built for years of reliable use.',
+            points: [
+              'Extended warranty add-ons',
+              'Dual-user clinic & couple protocols',
+              'Global free shipping on systems',
+            ],
+            visual: 'bg-gradient-to-br from-teal via-sage to-cyanaccent',
+            caption: 'Heal. Grow. Stay resilient.',
+          },
+        ],
+        scienceCards: [
+          {
+            title: 'Selective antioxidant activity',
+            body: 'H₂ preferentially targets cytotoxic radicals while preserving metabolic signaling — a key differentiator versus broad-spectrum antioxidants.',
+            link: 'View abstract summary →',
+          },
+          {
+            title: "Brown's Gas (oxyhydrogen)",
+            body: 'A blend of hydrogen and oxygen used in respiratory and recovery protocols where higher flow and mixed-gas delivery are preferred.',
+            link: 'Protocol overview →',
+          },
+          {
+            title: 'Purity & electrolysis design',
+            body: 'Medical-oriented cell design and deionized water discipline help sustain 99.99% purity ratings across the DBROTherapy machine lineup.',
+            link: 'Engineering notes →',
+          },
+          {
+            title: 'Clinical & wellness use cases',
+            body: 'From personal travel hydration to dual-user clinic floors — match flow rate and gas profile to the intended care setting.',
+            link: 'Compare devices →',
+          },
+        ],
+        faqs: [
+          {
+            q: 'Is this a live Shopify store?',
+            a: 'No — this is a client-side prototype. Cart and checkout are simulated in the browser with Alpine.js and do not process real payments.',
+          },
+          {
+            q: 'What is the difference between H₂ and oxyhydrogen?',
+            a: 'H₂ systems deliver pure molecular hydrogen. Oxyhydrogen (Brown\'s Gas) systems deliver a hydrogen–oxygen mix, often preferred for higher-flow respiratory and recovery protocols.',
+          },
+          {
+            q: 'Do you ship internationally?',
+            a: 'The prototype assumes free global shipping on all systems. A live store would confirm duties, voltage, and regional compliance at checkout.',
+          },
+          {
+            q: 'What is included with each machine?',
+            a: 'Each machine ships with a nasal cannula, deionized water starter kit, manual, power adapter, and a 1-year medical warranty. Extended coverage can be added on the product page.',
+          },
+          {
+            q: 'How do I choose a flow rate?',
+            a: 'Start with H₂-Lite (300–600) for personal daily use, OxyHydrogen Pro (1200–1800) for athletic recovery, or Hydro-Max 3000 for dual-user clinical environments. Use the Comparison Tool for a full matrix.',
+          },
+        ],
+
+        get featuredProducts() {
+          return this.products.filter((p) => p.featured);
+        },
+        get machines() {
+          return this.products.filter((p) => p.category === 'Machines');
+        },
+        get selectedProduct() {
+          return this.products.find((p) => p.id === this.selectedProductId) || null;
+        },
+        get activeBenefit() {
+          return this.benefitTabs.find((t) => t.id === this.benefitTab) || this.benefitTabs[0];
+        },
+        get cartCount() {
+          return this.cart.reduce((sum, item) => sum + item.qty, 0);
+        },
+        get subtotal() {
+          return this.cart.reduce((sum, item) => sum + item.unitPrice * item.qty, 0);
+        },
+        get taxPreview() {
+          return Math.round(this.subtotal * 0.08 * 100) / 100;
+        },
+        get estimatedTotal() {
+          return Math.round((this.subtotal + this.taxPreview) * 100) / 100;
+        },
+        get warrantyPrice() {
+          if (this.warrantyYears === 1) return 199;
+          if (this.warrantyYears === 2) return 349;
+          return 0;
+        },
+        get pdpTotal() {
+          if (!this.selectedProduct) return 0;
+          return this.selectedProduct.price + this.warrantyPrice;
+        },
+        get filteredProducts() {
+          const q = this.searchQuery.trim().toLowerCase();
+          return this.products.filter((p) => {
+            if (p.price > this.filters.maxPrice) return false;
+            if (this.filters.categories.length && !this.filters.categories.includes(p.category)) return false;
+            if (this.filters.flows.length) {
+              if (!p.flow || !this.filters.flows.includes(p.flow)) return false;
+            }
+            if (q && !(`${p.name} ${p.tagline} ${p.category}`.toLowerCase().includes(q))) return false;
+            return true;
+          });
+        },
+        get compareRows() {
+          const m = this.machines;
+          return [
+            { label: 'Gas Output (H₂ vs Oxyhydrogen)', values: m.map((p) => p.gasOutput) },
+            { label: 'Flow Rate (ml/min)', values: m.map((p) => p.flowRate) },
+            { label: 'Medical Purity Rating', values: m.map((p) => p.purity) },
+            { label: 'Dual-User Capability', values: m.map((p) => p.dualUser) },
+            { label: 'Touchscreen Controls', values: m.map((p) => (p.controls === 'Touchscreen' ? 'Yes' : 'LED panel')) },
+            { label: 'Ideal Target User', values: m.map((p) => p.idealUser) },
+          ];
+        },
+
+        formatMoney(n) {
+          return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n);
+        },
+        go(tab) {
+          this.currentTab = tab;
+          this.mobileNav = false;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        },
+        openProduct(id) {
+          this.selectedProductId = id;
+          this.pdpQty = 1;
+          this.warrantyYears = 0;
+          this.galleryIndex = 0;
+          this.accordion = 'specs';
+          this.go('product-detail');
+        },
+        showToast(msg) {
+          this.toast = msg;
+          clearTimeout(this.toastTimer);
+          this.toastTimer = setTimeout(() => { this.toast = null; }, 2200);
+        },
+        addToCart(product, qty = 1, warrantyYears = 0) {
+          const warranty = warrantyYears === 1 ? 199 : warrantyYears === 2 ? 349 : 0;
+          const unitPrice = product.price + warranty;
+          const existing = this.cart.find(
+            (item) => item.id === product.id && item.warrantyYears === warrantyYears
+          );
+          if (existing) {
+            existing.qty += qty;
+          } else {
+            this.cart.push({
+              uid: `${product.id}-w${warrantyYears}-${Date.now()}`,
+              id: product.id,
+              name: product.name,
+              gradient: product.gradient,
+              qty,
+              warrantyYears,
+              unitPrice,
+            });
+          }
+          this.cartOpen = true;
+          this.showToast(`Added ${product.name} to cart`);
+        },
+        updateQty(index, delta) {
+          const item = this.cart[index];
+          if (!item) return;
+          item.qty += delta;
+          if (item.qty <= 0) this.cart.splice(index, 1);
+        },
+        removeFromCart(index) {
+          this.cart.splice(index, 1);
+        },
+        resetFilters() {
+          this.filters = { categories: [], flows: [], maxPrice: 8000 };
+          this.searchQuery = '';
+        },
+        openCheckout() {
+          if (!this.cart.length) return;
+          this.cartOpen = false;
+          this.checkoutOpen = true;
+          this.checkoutStep = 0;
+          this.orderComplete = false;
+        },
+        completeOrder() {
+          this.orderTotal = this.estimatedTotal;
+          this.orderId = 'DBRO-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+          this.orderComplete = true;
+          this.cart = [];
+        },
+        finishOrder() {
+          this.checkoutOpen = false;
+          this.orderComplete = false;
+          this.checkoutStep = 0;
+          this.go('home');
+        },
+        closeOverlays() {
+          if (this.checkoutOpen && !this.orderComplete) this.checkoutOpen = false;
+          else if (this.quickView) this.quickView = null;
+          else if (this.cartOpen) this.cartOpen = false;
+          else if (this.mobileNav) this.mobileNav = false;
+        },
+      };
+    }
+  </script>
+</body>
+</html>
