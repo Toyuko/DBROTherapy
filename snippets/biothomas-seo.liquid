@@ -14,7 +14,7 @@
     "@type": "Organization",
     "name": {{ org_name | json }},
     "url": {{ org_url | json }},
-    "description": {{ shop.description | default: 'Advanced molecular hydrogen and oxyhydrogen systems for wellness, recovery, and professional care.' | json }}
+    "description": {{ shop.description | default: 'Advanced molecular hydrogen and oxyhydrogen systems for daily use, athletic use, and professional environments.' | json }}
     {%- if org_logo != blank -%}
     ,"logo": {{ org_logo | image_url: width: 600 | prepend: 'https:' | json }}
     {%- endif -%}

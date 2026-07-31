@@ -14,7 +14,7 @@
           "type": "question",
           "settings": {
             "question": "What is the difference between H₂ and oxyhydrogen?",
-            "answer": "<p>H₂ systems deliver pure molecular hydrogen. Oxyhydrogen (Brown's Gas) systems deliver a hydrogen–oxygen mix, often preferred for higher-flow respiratory and recovery protocols.</p>"
+            "answer": "<p>H₂ systems deliver pure molecular hydrogen. Oxyhydrogen (Brown's Gas) systems deliver a hydrogen–oxygen mix, often chosen for higher-flow athletic and professional setups.</p>"
           }
         },
         "q2": {
@@ -35,7 +35,7 @@
           "type": "question",
           "settings": {
             "question": "How do I choose a flow rate?",
-            "answer": "<p>Start with H₂-Lite (300–600) for personal daily use, OxyHydrogen Pro (1200–1800) for athletic recovery, or Hydro-Max 3000 for dual-user clinical environments.</p>"
+            "answer": "<p>Start with H₂-Lite (300–600) for personal daily use, OxyHydrogen Pro (1200–1800) for athletic use, or Hydro-Max 3000 for dual-user professional environments.</p>"
           }
         },
         "q5": {
@@ -49,7 +49,7 @@
           "type": "question",
           "settings": {
             "question": "Is this medical advice?",
-            "answer": "<p>No. BIOThomas content is for educational and wellness product information only. Consult a qualified professional before starting any therapy protocol.</p>"
+            "answer": "<p>No. BIOThomas provides product and engineering information only. Follow the product manual. This site does not provide medical advice.</p>"
           }
         }
       },

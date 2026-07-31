@@ -11,8 +11,8 @@
       "type": "biothomas-about",
       "settings": {
         "eyebrow": "About BIOThomas",
-        "heading": "Find Your Path. Heal. Grow.",
-        "text": "<p>TODO: Replace with the full BIOThomas brand story — mission, engineering heritage, and commitment to clinical-grade molecular hydrogen systems.</p><p>Formerly developed under the working name DBROTherapy, BIOThomas focuses on premium H₂ and oxyhydrogen platforms for personal, athletic, and professional care.</p>",
+        "heading": "Find Your Path. Build. Grow.",
+        "text": "<p>TODO: Replace with the full BIOThomas brand story — mission, engineering heritage, and commitment to professional-grade molecular hydrogen systems.</p><p>BIOThomas focuses on premium H₂ and oxyhydrogen platforms for personal, athletic, and professional environments.</p>",
         "button_label": "Shop systems",
         "button_link": "shopify://collections/all",
         "show_disclaimer": true
@@ -22,7 +22,7 @@
       "type": "biothomas-cta",
       "settings": {
         "heading": "Ready to explore BIOThomas?",
-        "text": "Browse systems or contact our team for protocol guidance.",
+        "text": "Browse systems or contact our team for system selection guidance.",
         "button_label_1": "Shop all",
         "button_link_1": "shopify://collections/all",
         "button_label_2": "Contact",

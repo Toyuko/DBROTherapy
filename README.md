@@ -1,6 +1,6 @@
 # BIOThomas — Shopify Online Store 2.0 Theme
 
-Premium Shopify theme for **BIOThomas** (formerly DBROTherapy): molecular hydrogen and oxyhydrogen wellness systems.
+Premium Shopify theme for **BIOThomas** (formerly DBROTherapy): molecular hydrogen and oxyhydrogen systems.
 
 **Production domain:** [biothomas.com](https://biothomas.com)
 
@@ -51,7 +51,7 @@ docs/            # Project reports & guides
 ## Brand
 
 - **Name:** BIOThomas  
-- **Tagline:** Find Your Path. Heal. Grow.  
+- **Tagline:** Find Your Path. Build. Grow.  
 - **Fonts:** Fraunces (display) + DM Sans (body)  
 - **Colors:** Charcoal `#3A3A3A`, soft `#F5F5F5`, gold `#FFCC00`, ink `#1E1E1E`  
 - **Logo asset:** `assets/biothomas-logo.png` (assign in Theme settings)
@@ -62,7 +62,7 @@ docs/            # Project reports & guides
 - Trust Badges  
 - Featured Services  
 - About  
-- Benefits (tabs)  
+- Capabilities (tabs)  
 - Testimonials  
 - Gallery  
 - FAQ (+ FAQPage JSON-LD)  

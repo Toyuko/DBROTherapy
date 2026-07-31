@@ -10,56 +10,56 @@
     "benefits": {
       "type": "biothomas-benefits",
       "settings": {
-        "heading": "Science & Benefits",
-        "subheading": "Peer-informed pathways for molecular hydrogen (H\u2082) and oxyhydrogen (Brown's Gas) in cellular wellness protocols."
+        "heading": "Systems & Specifications",
+        "subheading": "Flow rates, gas profiles, and engineering details for H₂ and oxyhydrogen systems."
       },
       "blocks": {
         "benefit_1": {
           "type": "benefit",
           "settings": {
-            "label": "Mitochondrial Energy",
-            "title": "Fuel cellular energy pathways",
-            "body": "Molecular hydrogen acts as a selective antioxidant, supporting mitochondrial efficiency and ATP production without disrupting beneficial signaling ROS.",
-            "point_1": "Supports NAD\u207a / redox balance",
-            "point_2": "Gentle daily inhalation protocols",
-            "point_3": "Ideal paired with H\u2082-Lite travel use",
-            "caption": "Cellular energy from the inside out"
+            "label": "Daily Use",
+            "title": "Built for everyday routines",
+            "body": "H₂-Lite delivers pure molecular hydrogen in a compact form factor sized for personal, at-home, and travel use.",
+            "point_1": "Pure H₂ output at 99.99%",
+            "point_2": "Quiet operation for daily use",
+            "point_3": "Ideal paired with H₂-Lite travel use",
+            "caption": "Portable H₂ for everyday routines"
           }
         },
         "benefit_2": {
           "type": "benefit",
           "settings": {
-            "label": "Athletic Recovery",
-            "title": "Recover faster between sessions",
-            "body": "Oxyhydrogen (Brown's Gas) delivery can support post-training inflammation modulation and perceived recovery for high-output athletes.",
-            "point_1": "1200\u20131800 ml/min Pro flow band",
-            "point_2": "Respiratory comfort during longer sessions",
-            "point_3": "Fits evening recovery routines",
-            "caption": "Train hard. Recover smarter."
+            "label": "Athletic Use",
+            "title": "Higher flow for training environments",
+            "body": "OxyHydrogen Pro delivers a hydrogen–oxygen mix at higher flow rates suited to athletic facilities and post-training routines.",
+            "point_1": "1200–1800 ml/min Pro flow band",
+            "point_2": "Stable output for longer run times",
+            "point_3": "Fits evening training schedules",
+            "caption": "Train hard. Stay consistent."
           }
         },
         "benefit_3": {
           "type": "benefit",
           "settings": {
-            "label": "Neuroprotection",
-            "title": "Support cognitive resilience",
-            "body": "Emerging research explores hydrogen's role in oxidative stress pathways relevant to focus, calm, and long-term neurological wellness protocols.",
+            "label": "Quiet Home Use",
+            "title": "Designed for focused, quiet sessions",
+            "body": "BIOThomas systems are engineered for consistent purity and low-noise operation in home and studio settings.",
             "point_1": "Quiet, at-home session design",
             "point_2": "Consistent purity at 99.99%",
-            "point_3": "Clinician-friendly Hydro-Max option",
-            "caption": "Clarity through molecular care"
+            "point_3": "Dual-user Hydro-Max option",
+            "caption": "Consistent purity. Quiet design."
           }
         },
         "benefit_4": {
           "type": "benefit",
           "settings": {
-            "label": "Anti-Aging",
-            "title": "Longevity-minded daily rituals",
-            "body": "Integrate hydrogen therapy into a broader longevity stack \u2014 sleep, movement, nutrition \u2014 with systems built for years of reliable use.",
+            "label": "Long-Term Ownership",
+            "title": "Built for years of reliable use",
+            "body": "BIOThomas platforms are engineered for durable daily operation, with warranty options and dual-user configurations.",
             "point_1": "Extended warranty add-ons",
-            "point_2": "Dual-user clinic & couple protocols",
+            "point_2": "Dual-user and shared-environment setups",
             "point_3": "Global free shipping on systems",
-            "caption": "Heal. Grow. Stay resilient."
+            "caption": "Build. Grow. Stay consistent."
           }
         }
       },
@@ -76,14 +76,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Clinical demo",
+            "heading": "Product demo",
             "heading_size": "h2"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>TODO: Embed owned clinical walkthrough video here (Theme Editor media or Shopify-hosted video). Prototype placeholder only.</p>"
+            "text": "<p>TODO: Embed owned product walkthrough video here (Theme Editor media or Shopify-hosted video). Prototype placeholder only.</p>"
           }
         },
         "button": {
@@ -116,8 +116,8 @@
       "type": "biothomas-about",
       "settings": {
         "eyebrow": "Important",
-        "heading": "Educational content disclaimer",
-        "text": "<p>TODO: Finalize legal disclaimer. Information on this page is for educational purposes and is not medical advice. Always consult a qualified healthcare professional.</p>",
+        "heading": "Product information disclaimer",
+        "text": "<p>TODO: Finalize legal disclaimer. BIOThomas systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice.</p>",
         "button_label": "",
         "show_disclaimer": false
       }

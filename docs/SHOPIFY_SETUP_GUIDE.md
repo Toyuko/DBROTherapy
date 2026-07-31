@@ -39,7 +39,7 @@ Canonical URLs and Organization schema in the theme use the live shop URL automa
 3. Confirm **BIOThomas** color schemes (preset applied).  
 4. Set cart type to **Drawer** (recommended).  
 5. Add social links when available.  
-6. Set brand headline: `Find Your Path. Heal. Grow.`
+6. Set brand headline: `Find Your Path. Build. Grow.`
 
 ## 3. Navigation
 

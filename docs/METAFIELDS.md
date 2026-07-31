@@ -10,10 +10,10 @@ Configure in **Settings → Custom data**.
 | `gas_output` | Single line text | H₂ vs oxyhydrogen |
 | `purity` | Single line text | e.g. `99.99%` |
 | `dual_user` | Single line text | `Yes` / `No` |
-| `ideal_user` | Single line text | Personal / Athlete / Clinic |
-| `flow_tier` | Single line text | Entry / Pro / Clinical |
+| `ideal_user` | Single line text | Personal / Athlete / Professional |
+| `flow_tier` | Single line text | Entry / Pro / Professional |
 | `whats_in_the_box` | Multi-line text | PDP accordion content |
-| `protocol_notes` | Multi-line text | Usage guidance (non-medical) |
+| `usage_notes` | Multi-line text | Product usage guidance (no health claims) |
 
 Theme section `biothomas-product-details` reads the first five automatically when present.
 

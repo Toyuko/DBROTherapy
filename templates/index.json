@@ -5,10 +5,10 @@
       "settings": {
         "eyebrow": "BIOThomas",
         "heading": "Advanced Molecular Hydrogen & Oxyhydrogen Systems",
-        "text": "Find Your Path. Heal. Grow. — clinical-grade H₂ and Brown's Gas therapy for daily wellness, athletic recovery, and professional care.",
+        "text": "Precision-engineered H₂ and oxyhydrogen (Brown's Gas) systems for daily use, athletic use, and professional environments.",
         "button_label_1": "Browse Systems",
         "button_link_1": "shopify://collections/all",
-        "button_label_2": "Explore Science",
+        "button_label_2": "Explore Systems",
         "button_link_2": "shopify://pages/science"
       }
     },
@@ -32,8 +32,8 @@
         "badge_3": {
           "type": "badge",
           "settings": {
-            "value": "Medical",
-            "label": "Warranty Coverage"
+            "value": "1-Year",
+            "label": "Warranty Included"
           }
         },
         "badge_4": {
@@ -55,8 +55,8 @@
         "service_1": {
           "type": "service",
           "settings": {
-            "title": "Personal H₂ Therapy",
-            "text": "Daily molecular hydrogen sessions designed for travel and at-home routines.",
+            "title": "Personal H₂ Systems",
+            "text": "Compact molecular hydrogen systems designed for travel and at-home daily use.",
             "link_label": "Shop H₂-Lite →",
             "link": "shopify://collections/all"
           }
@@ -64,8 +64,8 @@
         "service_2": {
           "type": "service",
           "settings": {
-            "title": "Athletic Recovery",
-            "text": "Higher-flow oxyhydrogen support for post-training inflammation modulation.",
+            "title": "Athletic Use",
+            "text": "Higher-flow oxyhydrogen systems built for post-training routines and athletic environments.",
             "link_label": "Shop Pro systems →",
             "link": "shopify://collections/all"
           }
@@ -73,9 +73,9 @@
         "service_3": {
           "type": "service",
           "settings": {
-            "title": "Clinical Systems",
-            "text": "Dual-user Hydro-Max platforms for professional and clinic environments.",
-            "link_label": "View clinical →",
+            "title": "Professional Systems",
+            "text": "Dual-user Hydro-Max platforms for professional environments.",
+            "link_label": "View professional systems →",
             "link": "shopify://pages/services"
           }
         }
@@ -83,7 +83,7 @@
       "block_order": ["service_1", "service_2", "service_3"],
       "settings": {
         "heading": "Featured Services",
-        "subheading": "Personal wellness, athletic recovery, and clinical-grade oxyhydrogen protocols."
+        "subheading": "Personal daily use, athletic use, and professional-grade oxyhydrogen systems."
       }
     },
     "featured_collection": {
@@ -91,7 +91,7 @@
       "settings": {
         "title": "Featured Systems",
         "heading_size": "h2",
-        "description": "<p>Three precision-engineered platforms — from personal travel hydration to dual-user clinical biohacking.</p>",
+        "description": "<p>Three precision-engineered platforms — from portable personal systems to dual-user professional setups.</p>",
         "show_description": true,
         "description_style": "body",
         "collection": "all",
@@ -118,8 +118,8 @@
       "type": "biothomas-about",
       "settings": {
         "eyebrow": "About BIOThomas",
-        "heading": "Precision hydrogen systems for modern wellness",
-        "text": "<p>TODO: Replace with client-approved BIOThomas story. We design clinical-grade molecular hydrogen and oxyhydrogen platforms for daily wellness, athletic recovery, and professional care.</p>",
+        "heading": "Precision hydrogen systems for modern daily use",
+        "text": "<p>TODO: Replace with client-approved BIOThomas story. We design professional-grade molecular hydrogen and oxyhydrogen platforms for daily use, athletic use, and professional environments.</p>",
         "button_label": "Our story",
         "button_link": "shopify://pages/about",
         "show_disclaimer": true
@@ -131,56 +131,56 @@
         "benefit_1": {
           "type": "benefit",
           "settings": {
-            "label": "Mitochondrial Energy",
-            "title": "Fuel cellular energy pathways",
-            "body": "Molecular hydrogen acts as a selective antioxidant, supporting mitochondrial efficiency and ATP production without disrupting beneficial signaling ROS.",
-            "point_1": "Supports NAD⁺ / redox balance",
-            "point_2": "Gentle daily inhalation protocols",
+            "label": "Daily Use",
+            "title": "Built for everyday routines",
+            "body": "H₂-Lite delivers pure molecular hydrogen in a compact form factor sized for personal, at-home, and travel use.",
+            "point_1": "Pure H₂ output at 99.99%",
+            "point_2": "Quiet operation for daily use",
             "point_3": "Ideal paired with H₂-Lite travel use",
-            "caption": "Cellular energy from the inside out"
+            "caption": "Portable H₂ for everyday routines"
           }
         },
         "benefit_2": {
           "type": "benefit",
           "settings": {
-            "label": "Athletic Recovery",
-            "title": "Recover faster between sessions",
-            "body": "Oxyhydrogen (Brown's Gas) delivery can support post-training inflammation modulation and perceived recovery for high-output athletes.",
+            "label": "Athletic Use",
+            "title": "Higher flow for training environments",
+            "body": "OxyHydrogen Pro delivers a hydrogen–oxygen mix at higher flow rates suited to athletic facilities and post-training routines.",
             "point_1": "1200–1800 ml/min Pro flow band",
-            "point_2": "Respiratory comfort during longer sessions",
-            "point_3": "Fits evening recovery routines",
-            "caption": "Train hard. Recover smarter."
+            "point_2": "Stable output for longer run times",
+            "point_3": "Fits evening training schedules",
+            "caption": "Train hard. Stay consistent."
           }
         },
         "benefit_3": {
           "type": "benefit",
           "settings": {
-            "label": "Neuroprotection",
-            "title": "Support cognitive resilience",
-            "body": "Emerging research explores hydrogen's role in oxidative stress pathways relevant to focus, calm, and long-term neurological wellness protocols.",
+            "label": "Quiet Home Use",
+            "title": "Designed for focused, quiet sessions",
+            "body": "BIOThomas systems are engineered for consistent purity and low-noise operation in home and studio settings.",
             "point_1": "Quiet, at-home session design",
             "point_2": "Consistent purity at 99.99%",
-            "point_3": "Clinician-friendly Hydro-Max option",
-            "caption": "Clarity through molecular care"
+            "point_3": "Dual-user Hydro-Max option",
+            "caption": "Consistent purity. Quiet design."
           }
         },
         "benefit_4": {
           "type": "benefit",
           "settings": {
-            "label": "Anti-Aging",
-            "title": "Longevity-minded daily rituals",
-            "body": "Integrate hydrogen therapy into a broader longevity stack — sleep, movement, nutrition — with systems built for years of reliable use.",
+            "label": "Long-Term Ownership",
+            "title": "Built for years of reliable use",
+            "body": "BIOThomas platforms are engineered for durable daily operation, with warranty options and dual-user configurations.",
             "point_1": "Extended warranty add-ons",
-            "point_2": "Dual-user clinic & couple protocols",
+            "point_2": "Dual-user and shared-environment setups",
             "point_3": "Global free shipping on systems",
-            "caption": "Heal. Grow. Stay resilient."
+            "caption": "Build. Grow. Stay consistent."
           }
         }
       },
       "block_order": ["benefit_1", "benefit_2", "benefit_3", "benefit_4"],
       "settings": {
-        "heading": "Health Benefits",
-        "subheading": "Explore how molecular hydrogen and oxyhydrogen support energy, recovery, cognition, and longevity."
+        "heading": "System Capabilities",
+        "subheading": "Explore flow rates, gas profiles, and form factors across the BIOThomas lineup."
       }
     },
     "biothomas_testimonials": {
@@ -189,7 +189,7 @@
         "t1": {
           "type": "testimonial",
           "settings": {
-            "quote": "TODO: Client testimonial about daily H₂ sessions and recovery.",
+            "quote": "TODO: Client testimonial about daily H₂ use and training routines.",
             "author": "Alex M.",
             "role": "Endurance athlete"
           }
@@ -197,9 +197,9 @@
         "t2": {
           "type": "testimonial",
           "settings": {
-            "quote": "TODO: Clinic partner quote about dual-user Hydro-Max protocols.",
-            "author": "Dr. Rivera",
-            "role": "Wellness clinic director"
+            "quote": "TODO: Facility partner quote about dual-user Hydro-Max setups.",
+            "author": "Sam Rivera",
+            "role": "Training facility director"
           }
         },
         "t3": {
@@ -222,9 +222,9 @@
       "blocks": {
         "g1": { "type": "image", "settings": { "caption": "H₂-Lite — Front" } },
         "g2": { "type": "image", "settings": { "caption": "OxyHydrogen Pro — In use" } },
-        "g3": { "type": "image", "settings": { "caption": "Hydro-Max — Clinic" } },
+        "g3": { "type": "image", "settings": { "caption": "Hydro-Max — Professional setup" } },
         "g4": { "type": "image", "settings": { "caption": "Accessories" } },
-        "g5": { "type": "image", "settings": { "caption": "Recovery session" } },
+        "g5": { "type": "image", "settings": { "caption": "In-use session" } },
         "g6": { "type": "image", "settings": { "caption": "Detail" } }
       },
       "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"],
@@ -257,7 +257,7 @@
           "type": "question",
           "settings": {
             "question": "What is the difference between H₂ and oxyhydrogen?",
-            "answer": "<p>H₂ systems deliver pure molecular hydrogen. Oxyhydrogen (Brown's Gas) systems deliver a hydrogen–oxygen mix, often preferred for higher-flow respiratory and recovery protocols.</p>"
+            "answer": "<p>H₂ systems deliver pure molecular hydrogen. Oxyhydrogen (Brown's Gas) systems deliver a hydrogen–oxygen mix, often chosen for higher-flow athletic and professional setups.</p>"
           }
         },
         "q2": {
@@ -271,7 +271,7 @@
           "type": "question",
           "settings": {
             "question": "How do I choose a flow rate?",
-            "answer": "<p>Start with H₂-Lite for personal daily use, OxyHydrogen Pro for athletic recovery, or Hydro-Max 3000 for dual-user clinical environments.</p>"
+            "answer": "<p>Start with H₂-Lite for personal daily use, OxyHydrogen Pro for athletic use, or Hydro-Max 3000 for dual-user professional environments.</p>"
           }
         }
       },
@@ -290,7 +290,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Protocol updates & wellness tips",
+            "heading": "Product updates & system tips",
             "heading_size": "h1"
           }
         },
@@ -315,8 +315,8 @@
     "biothomas_cta": {
       "type": "biothomas-cta",
       "settings": {
-        "heading": "Find Your Path. Heal. Grow.",
-        "text": "Explore BIOThomas systems for daily wellness, athletic recovery, and professional care.",
+        "heading": "Find Your Path. Build. Grow.",
+        "text": "Explore BIOThomas systems for daily use, athletic use, and professional environments.",
         "button_label_1": "Shop systems",
         "button_link_1": "shopify://collections/all",
         "button_label_2": "Contact us",

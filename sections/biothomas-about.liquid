@@ -44,7 +44,7 @@
     </div>
     {%- if section.settings.show_disclaimer -%}
       <p class="biothomas-disclaimer">
-        {{ section.settings.disclaimer | default: 'TODO: Wellness information on this site is for educational purposes and is not medical advice. Consult a qualified professional before starting any therapy protocol.' | escape }}
+        {{ section.settings.disclaimer | default: 'BIOThomas systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice.' | escape }}
       </p>
     {%- endif -%}
   </div>
@@ -66,13 +66,13 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Precision hydrogen systems for modern wellness"
+      "default": "Precision hydrogen systems for modern daily use"
     },
     {
       "type": "richtext",
       "id": "text",
       "label": "Text",
-      "default": "<p>TODO: Replace with client-approved BIOThomas story. We design clinical-grade molecular hydrogen and oxyhydrogen platforms for daily wellness, athletic recovery, and professional care.</p>"
+      "default": "<p>TODO: Replace with client-approved BIOThomas story. We design professional-grade molecular hydrogen and oxyhydrogen platforms for daily use, athletic use, and professional environments.</p>"
     },
     {
       "type": "image_picker",
@@ -93,13 +93,14 @@
     {
       "type": "checkbox",
       "id": "show_disclaimer",
-      "label": "Show wellness disclaimer",
+      "label": "Show product disclaimer",
       "default": true
     },
     {
       "type": "textarea",
       "id": "disclaimer",
-      "label": "Disclaimer text"
+      "label": "Disclaimer text",
+      "default": "BIOThomas systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice."
     }
   ],
   "presets": [
