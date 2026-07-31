@@ -5,7 +5,7 @@
 - Shopify store with theme upload permission  
 - Shopify CLI (recommended) or Admin ZIP upload  
 - Theme code from this repository  
-- Production domain: **biothomas.com** (connect in Settings → Domains before or right after publish)  
+- Production domain: **biothomas.com** (connected; storefront currently password-protected / “Opening soon”)  
 
 ## Option A — Shopify CLI (recommended)
 

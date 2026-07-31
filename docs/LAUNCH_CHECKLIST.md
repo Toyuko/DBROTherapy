@@ -16,8 +16,9 @@ Do not publish until every **P0** item is complete.
 - [ ] Support email monitored  
 - [ ] Theme QA checklist completed  
 - [ ] Password page removed / store opened  
-- [ ] **biothomas.com** connected as primary domain (HTTPS + www redirect decided)  
-- [ ] Smoke test on `https://biothomas.com` (not only the `*.myshopify.com` URL)  
+- [x] **biothomas.com** connected as primary domain (HTTPS live; confirm www redirect preference)  
+- [ ] Smoke test on `https://biothomas.com` after theme publish (not only the `*.myshopify.com` URL)  
+- [ ] Remove storefront password (“Opening soon”) when ready for public launch  
 
 ## P1 — Strongly recommended
 
