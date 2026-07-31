@@ -12,22 +12,23 @@
 ```bash
 cd /path/to/DBROTherapy
 
-# Authenticate / select store
-shopify theme dev --store YOUR-STORE.myshopify.com
+# Authenticate / select store (hostname also in shopify.theme.toml)
+shopify theme dev --store djrgy9-x6.myshopify.com
 
 # Push as unpublished theme
-shopify theme push --unpublished --store YOUR-STORE.myshopify.com
+shopify theme push --unpublished --store djrgy9-x6.myshopify.com
 
 # Or push to an existing theme ID
-shopify theme push --theme THEME_ID --store YOUR-STORE.myshopify.com
+shopify theme push --theme THEME_ID --store djrgy9-x6.myshopify.com
 ```
 
-Preview the unpublished theme in Admin → Online Store → Themes → Preview.
+Preview the unpublished theme in Admin → Online Store → Themes → Preview  
+(or https://admin.shopify.com/store/djrgy9-x6/themes).
 
 Publish only after QA:
 
 ```bash
-shopify theme publish --theme THEME_ID --store YOUR-STORE.myshopify.com
+shopify theme publish --theme THEME_ID --store djrgy9-x6.myshopify.com
 ```
 
 ## Option B — ZIP upload

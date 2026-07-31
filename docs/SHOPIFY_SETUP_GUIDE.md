@@ -9,14 +9,17 @@ Complete these steps in Shopify Admin after uploading the theme.
 3. From the repo root:
 
 ```bash
-shopify theme dev --store YOUR-STORE.myshopify.com
+shopify theme dev --store djrgy9-x6.myshopify.com
 ```
 
 4. Or upload a theme ZIP via **Online Store → Themes**.
 
+**Shopify admin hostname:** `djrgy9-x6.myshopify.com`  
+**Admin URL:** https://admin.shopify.com/store/djrgy9-x6
+
 ## 1b. Connect biothomas.com
 
-**Production domain:** `biothomas.com`
+**Production domain:** `biothomas.com` (already connected)
 
 1. In Shopify Admin → **Settings → Domains**, add `biothomas.com` (and `www.biothomas.com` if used).  
 2. At your DNS provider, point the domain to Shopify (A / CNAME records Shopify shows).  

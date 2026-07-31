@@ -12,11 +12,12 @@ Built on [Dawn 15.5.0](https://github.com/Shopify/dawn) with a BIOThomas brand l
 # Install Shopify CLI: https://shopify.dev/docs/api/shopify-cli
 npm install -g @shopify/cli @shopify/theme
 
-# From this repository root (use your *.myshopify.com admin hostname)
-shopify theme dev --store YOUR-STORE.myshopify.com
+# From this repository root
+shopify theme dev --store djrgy9-x6.myshopify.com
+# or: shopify theme dev  (uses shopify.theme.toml)
 ```
 
-After go-live, the storefront is served at **https://biothomas.com** (connect the domain in Shopify Admin → Settings → Domains).
+**Store:** `djrgy9-x6.myshopify.com` · **Public domain:** [biothomas.com](https://biothomas.com)
 
 Upload without CLI: zip the theme folders (`assets`, `config`, `layout`, `locales`, `sections`, `snippets`, `templates`) and upload via **Online Store → Themes → Add theme → Upload zip**.
 

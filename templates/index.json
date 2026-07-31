@@ -91,7 +91,7 @@
       "settings": {
         "title": "Featured Systems",
         "heading_size": "h2",
-        "description": "Three precision-engineered platforms — from personal travel hydration to dual-user clinical biohacking.",
+        "description": "<p>Three precision-engineered platforms — from personal travel hydration to dual-user clinical biohacking.</p>",
         "show_description": true,
         "description_style": "body",
         "collection": "all",
@@ -285,7 +285,7 @@
       }
     },
     "newsletter": {
-      "type": "email-signup-banner",
+      "type": "newsletter",
       "blocks": {
         "heading": {
           "type": "heading",
@@ -297,8 +297,7 @@
         "paragraph": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>TODO: Confirm newsletter consent language. Join the BIOThomas list for product updates and educational content.</p>",
-            "text_style": "body"
+            "text": "<p>TODO: Confirm newsletter consent language. Join the BIOThomas list for product updates and educational content.</p>"
           }
         },
         "email_form": {
@@ -307,15 +306,10 @@
       },
       "block_order": ["heading", "paragraph", "email_form"],
       "settings": {
-        "show_background_image": false,
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "show_text_below": true
+        "full_width": true,
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     },
     "biothomas_cta": {
