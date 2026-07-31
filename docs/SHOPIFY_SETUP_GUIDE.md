@@ -14,6 +14,19 @@ shopify theme dev --store YOUR-STORE.myshopify.com
 
 4. Or upload a theme ZIP via **Online Store → Themes**.
 
+## 1b. Connect biothomas.com
+
+**Production domain:** `biothomas.com`
+
+1. In Shopify Admin → **Settings → Domains**, add `biothomas.com` (and `www.biothomas.com` if used).  
+2. At your DNS provider, point the domain to Shopify (A / CNAME records Shopify shows).  
+3. Set **biothomas.com** as the primary domain.  
+4. Enable HTTPS (Shopify provisions the certificate once DNS propagates).  
+5. Prefer redirecting `www` → apex (or the reverse) so there is one canonical host.  
+6. Update any marketing links from the prototype (`touysmith.com/dbro/`) to `https://biothomas.com`.  
+
+Canonical URLs and Organization schema in the theme use the live shop URL automatically once this domain is primary.
+
 ## 2. Theme settings
 
 **Online Store → Themes → Customize → Theme settings**
@@ -102,7 +115,7 @@ See [METAFIELDS.md](METAFIELDS.md) for product metafield setup.
 
 - Product reviews app  
 - Instagram feed (optional; or link-only in footer)  
-- SEO / redirects if migrating from `touysmith.com/dbro/`
+- SEO / redirects from the prototype at `touysmith.com/dbro/` → `https://biothomas.com`
 
 ## 9. Payments, shipping, taxes
 

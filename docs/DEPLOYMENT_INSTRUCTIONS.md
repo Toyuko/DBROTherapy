@@ -5,6 +5,7 @@
 - Shopify store with theme upload permission  
 - Shopify CLI (recommended) or Admin ZIP upload  
 - Theme code from this repository  
+- Production domain: **biothomas.com** (connect in Settings → Domains before or right after publish)  
 
 ## Option A — Shopify CLI (recommended)
 
@@ -48,13 +49,15 @@ Configure stores in `shopify.theme.toml` after linking your shop.
 
 ## Post-deploy verification
 
-1. Home hero + sections render  
-2. Collections / products load  
-3. Cart drawer + checkout path  
-4. Contact form delivers email  
-5. Policy links work  
-6. Mobile nav + keyboard focus  
-7. Lighthouse sample on home + product  
+1. `https://biothomas.com` resolves to the published theme (not a DNS/SSL error)  
+2. Home hero + sections render  
+3. Collections / products load  
+4. Cart drawer + checkout path  
+5. Contact form delivers email  
+6. Policy links work  
+7. Mobile nav + keyboard focus  
+8. Lighthouse sample on home + product  
+9. Canonical / OG URLs show `https://biothomas.com/...`
 
 ## Rollback
 

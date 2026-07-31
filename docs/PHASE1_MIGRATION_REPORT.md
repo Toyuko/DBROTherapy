@@ -2,7 +2,8 @@
 
 **Date:** 2026-07-31  
 **Source repository:** https://github.com/Toyuko/DBROTherapy  
-**Existing website:** https://touysmith.com/dbro/  
+**Existing website (prototype):** https://touysmith.com/dbro/  
+**Production domain:** https://biothomas.com  
 **Target:** Shopify Online Store 2.0 theme (Dawn foundation)  
 **Brand going forward:** BIOThomas (legacy working name: DBROTherapy)
 

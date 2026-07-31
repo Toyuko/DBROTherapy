@@ -1,5 +1,8 @@
 # BIOThomas Shopify CLI theme configuration
 # https://shopify.dev/docs/storefronts/themes/tools/cli
+#
+# Public storefront domain: https://biothomas.com
+# CLI --store still uses the *.myshopify.com admin hostname.
 
 [environments.development]
 # TODO: Set your development store after `shopify theme dev --store your-store.myshopify.com`
@@ -8,3 +11,4 @@
 [environments.production]
 # TODO: Set your production store before deploy
 # store = "your-store.myshopify.com"
+# Public domain after DNS is connected: biothomas.com

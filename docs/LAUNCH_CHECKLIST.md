@@ -16,6 +16,8 @@ Do not publish until every **P0** item is complete.
 - [ ] Support email monitored  
 - [ ] Theme QA checklist completed  
 - [ ] Password page removed / store opened  
+- [ ] **biothomas.com** connected as primary domain (HTTPS + www redirect decided)  
+- [ ] Smoke test on `https://biothomas.com` (not only the `*.myshopify.com` URL)  
 
 ## P1 — Strongly recommended
 

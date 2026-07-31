@@ -2,6 +2,8 @@
 
 Premium Shopify theme for **BIOThomas** (formerly DBROTherapy): molecular hydrogen and oxyhydrogen wellness systems.
 
+**Production domain:** [biothomas.com](https://biothomas.com)
+
 Built on [Dawn 15.5.0](https://github.com/Shopify/dawn) with a BIOThomas brand layer, configurable sections, and SEO foundations.
 
 ## Quick start
@@ -10,9 +12,11 @@ Built on [Dawn 15.5.0](https://github.com/Shopify/dawn) with a BIOThomas brand l
 # Install Shopify CLI: https://shopify.dev/docs/api/shopify-cli
 npm install -g @shopify/cli @shopify/theme
 
-# From this repository root
+# From this repository root (use your *.myshopify.com admin hostname)
 shopify theme dev --store YOUR-STORE.myshopify.com
 ```
+
+After go-live, the storefront is served at **https://biothomas.com** (connect the domain in Shopify Admin → Settings → Domains).
 
 Upload without CLI: zip the theme folders (`assets`, `config`, `layout`, `locales`, `sections`, `snippets`, `templates`) and upload via **Online Store → Themes → Add theme → Upload zip**.
 
