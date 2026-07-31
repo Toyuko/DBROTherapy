@@ -1,0 +1,10 @@
+# BIOThomas Shopify CLI theme configuration
+# https://shopify.dev/docs/storefronts/themes/tools/cli
+
+[environments.development]
+# TODO: Set your development store after `shopify theme dev --store your-store.myshopify.com`
+# store = "your-store.myshopify.com"
+
+[environments.production]
+# TODO: Set your production store before deploy
+# store = "your-store.myshopify.com"

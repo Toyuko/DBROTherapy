@@ -1,0 +1,67 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "faq": {
+      "type": "biothomas-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "What is the difference between H₂ and oxyhydrogen?",
+            "answer": "<p>H₂ systems deliver pure molecular hydrogen. Oxyhydrogen (Brown's Gas) systems deliver a hydrogen–oxygen mix, often preferred for higher-flow respiratory and recovery protocols.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>TODO: Confirm shipping regions, duties, voltage, and regional compliance at checkout.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "What is included with each machine?",
+            "answer": "<p>Each machine ships with a nasal cannula, deionized water starter kit, manual, power adapter, and a 1-year warranty. Extended coverage can be added on the product page.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "How do I choose a flow rate?",
+            "answer": "<p>Start with H₂-Lite (300–600) for personal daily use, OxyHydrogen Pro (1200–1800) for athletic recovery, or Hydro-Max 3000 for dual-user clinical environments.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "What is your returns policy?",
+            "answer": "<p>TODO: Replace with client-approved refund policy details.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Is this medical advice?",
+            "answer": "<p>No. BIOThomas content is for educational and wellness product information only. Consult a qualified professional before starting any therapy protocol.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
+      "settings": {
+        "heading": "Frequently asked questions",
+        "subheading": "Common questions about BIOThomas systems, shipping, and usage.",
+        "open_first": true,
+        "button_label": "Still need help?",
+        "button_link": "shopify://pages/contact"
+      }
+    }
+  },
+  "order": ["main", "faq"]
+}

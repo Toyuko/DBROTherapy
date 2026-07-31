@@ -1,0 +1,85 @@
+<section class="biothomas-section biothomas-cta" id="BiothomasCta-{{ section.id }}">
+  <div class="biothomas-section__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="biothomas-section__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <p class="biothomas-section__subheading">{{ section.settings.text | escape }}</p>
+    {%- endif -%}
+    <div class="biothomas-cta__actions">
+      {%- if section.settings.button_label_1 != blank -%}
+        <a
+          class="button"
+          {% if section.settings.button_link_1 == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.button_link_1 }}"
+          {% endif %}
+        >
+          {{ section.settings.button_label_1 | escape }}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.button_label_2 != blank -%}
+        <a
+          class="button button--secondary"
+          {% if section.settings.button_link_2 == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.button_link_2 }}"
+          {% endif %}
+        >
+          {{ section.settings.button_label_2 | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIOThomas CTA",
+  "tag": "section",
+  "class": "section-biothomas-cta",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find Your Path. Heal. Grow."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Explore BIOThomas systems for daily wellness, athletic recovery, and professional care."
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Primary button label",
+      "default": "Shop systems"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Secondary button label",
+      "default": "Talk to us"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Secondary button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIOThomas CTA"
+    }
+  ]
+}
+{% endschema %}

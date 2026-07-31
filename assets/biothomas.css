@@ -1,0 +1,574 @@
+/* BIOThomas brand layer — builds on Dawn */
+
+:root {
+  --bt-charcoal: #3a3a3a;
+  --bt-charcoal-dark: #1f1f1f;
+  --bt-ink: #1e1e1e;
+  --bt-soft: #f5f5f5;
+  --bt-gold: #ffcc00;
+  --bt-red: #dd0000;
+  --bt-muted: #6e6e6e;
+  --bt-radius: 0.8rem;
+  --bt-radius-lg: 1.6rem;
+  --bt-shadow: 0 8px 30px rgba(31, 31, 31, 0.1);
+}
+
+/* Prefer Fraunces / DM Sans when loaded; fall back to theme fonts */
+.bt-font-display,
+.biothomas-hero__heading,
+.biothomas-section__heading {
+  font-family: 'Fraunces', var(--font-heading-family);
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+
+body {
+  font-family: 'DM Sans', var(--font-body-family);
+}
+
+/* Atmosphere backgrounds */
+.bt-atmosphere {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 20%, rgba(255, 204, 0, 0.08), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 90% 10%, rgba(221, 0, 0, 0.05), transparent 45%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(58, 58, 58, 0.06), transparent 50%),
+    var(--bt-soft);
+}
+
+.biothomas-hero {
+  position: relative;
+  min-height: clamp(32rem, 88vh, 56rem);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(255, 204, 0, 0.18), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(221, 0, 0, 0.12), transparent 40%),
+    linear-gradient(145deg, #1a1a1a 0%, #2e2e2e 45%, #4a4a4a 100%);
+}
+
+.biothomas-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.biothomas-hero__media img,
+.biothomas-hero__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.biothomas-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    rgba(26, 26, 26, 0.88) 0%,
+    rgba(46, 46, 46, 0.68) 45%,
+    rgba(46, 46, 46, 0.38) 100%
+  );
+}
+
+.biothomas-hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+.biothomas-hero__eyebrow {
+  margin: 0 0 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bt-gold);
+}
+
+.biothomas-hero__heading {
+  margin: 0;
+  max-width: 18ch;
+  font-size: clamp(3.2rem, 5vw, 5.6rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.biothomas-hero__text {
+  margin: 1.6rem 0 0;
+  max-width: 42rem;
+  font-size: 1.7rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.biothomas-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.4rem;
+}
+
+.biothomas-hero__actions .button {
+  min-width: 16rem;
+}
+
+@keyframes bt-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bt-animate-fade-up {
+  animation: bt-fade-up 0.7s ease-out both;
+}
+
+.bt-animate-fade-up-delay {
+  animation: bt-fade-up 0.7s ease-out 0.15s both;
+}
+
+.bt-animate-fade-up-delay-2 {
+  animation: bt-fade-up 0.7s ease-out 0.3s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bt-animate-fade-up,
+  .bt-animate-fade-up-delay,
+  .bt-animate-fade-up-delay-2 {
+    animation: none;
+  }
+}
+
+/* Shared section chrome */
+.biothomas-section {
+  padding: 5.6rem 0;
+}
+
+.biothomas-section__inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.biothomas-section__header {
+  max-width: 54rem;
+  margin-bottom: 3.2rem;
+}
+
+.biothomas-section__heading {
+  margin: 0;
+  font-size: clamp(2.6rem, 3.2vw, 3.6rem);
+  font-weight: 600;
+  color: var(--bt-charcoal);
+  line-height: 1.15;
+}
+
+.biothomas-section__subheading {
+  margin: 1.2rem 0 0;
+  font-size: 1.6rem;
+  line-height: 1.55;
+  color: rgba(30, 30, 30, 0.7);
+}
+
+/* Trust badges */
+.biothomas-trust {
+  border-block: 1px solid rgba(58, 58, 58, 0.1);
+  background: #fff;
+}
+
+.biothomas-trust__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 3.2rem 1.5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .biothomas-trust__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.biothomas-trust__value {
+  margin: 0;
+  font-family: 'Fraunces', var(--font-heading-family);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--bt-charcoal);
+}
+
+.biothomas-trust__label {
+  margin: 0.4rem 0 0;
+  font-size: 1.3rem;
+  color: rgba(30, 30, 30, 0.65);
+}
+
+/* Services / benefits / cards */
+.biothomas-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .biothomas-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .biothomas-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .biothomas-grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.biothomas-card {
+  background: #fff;
+  border-radius: var(--bt-radius-lg);
+  box-shadow: var(--bt-shadow);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.biothomas-card__media {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(145deg, #1f1f1f 0%, #3a3a3a 40%, #6e6e6e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.biothomas-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.biothomas-card__body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.biothomas-card__title {
+  margin: 0;
+  font-family: 'Fraunces', var(--font-heading-family);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--bt-ink);
+}
+
+.biothomas-card__text {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: rgba(30, 30, 30, 0.65);
+}
+
+.biothomas-card__link {
+  margin-top: auto;
+  padding-top: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--bt-muted);
+  text-decoration: none;
+}
+
+.biothomas-card__link:hover {
+  color: var(--bt-charcoal);
+}
+
+/* Benefits tabs */
+.biothomas-benefits__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 2.4rem;
+}
+
+.biothomas-benefits__tab {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  border-radius: 0.8rem 0.8rem 0 0;
+  padding: 1rem 1.4rem;
+  font: inherit;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgba(30, 30, 30, 0.6);
+  cursor: pointer;
+}
+
+.biothomas-benefits__tab[aria-selected='true'] {
+  background: var(--bt-charcoal);
+  color: #fff;
+}
+
+.biothomas-benefits__panel {
+  display: none;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.biothomas-benefits__panel.is-active {
+  display: grid;
+}
+
+@media screen and (min-width: 990px) {
+  .biothomas-benefits__panel.is-active {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.biothomas-benefits__visual {
+  min-height: 28rem;
+  border-radius: var(--bt-radius-lg);
+  background: linear-gradient(145deg, #1f1f1f 0%, #3a3a3a 40%, #6e6e6e 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.4rem;
+}
+
+.biothomas-benefits__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.biothomas-benefits__list {
+  margin: 1.6rem 0 0;
+  padding-left: 1.2rem;
+  color: rgba(30, 30, 30, 0.75);
+  font-size: 1.45rem;
+  line-height: 1.6;
+}
+
+/* Testimonials */
+.biothomas-quote {
+  margin: 0;
+  padding: 2.4rem;
+  background: #fff;
+  border-radius: var(--bt-radius-lg);
+  box-shadow: var(--bt-shadow);
+  height: 100%;
+}
+
+.biothomas-quote__text {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.55;
+  color: var(--bt-ink);
+}
+
+.biothomas-quote__author {
+  margin: 1.6rem 0 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--bt-charcoal);
+}
+
+.biothomas-quote__role {
+  margin: 0.2rem 0 0;
+  font-size: 1.2rem;
+  color: var(--bt-muted);
+}
+
+/* Gallery */
+.biothomas-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .biothomas-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+.biothomas-gallery__item {
+  aspect-ratio: 1;
+  border-radius: var(--bt-radius);
+  overflow: hidden;
+  background: linear-gradient(145deg, #e8e8e8, #cfcfcf);
+}
+
+.biothomas-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.biothomas-gallery__item:hover img {
+  transform: scale(1.04);
+}
+
+/* FAQ */
+.biothomas-faq details {
+  border-bottom: 1px solid rgba(58, 58, 58, 0.12);
+  padding: 1.4rem 0;
+}
+
+.biothomas-faq summary {
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--bt-charcoal);
+  list-style: none;
+}
+
+.biothomas-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.biothomas-faq__answer {
+  margin: 1rem 0 0;
+  font-size: 1.45rem;
+  line-height: 1.55;
+  color: rgba(30, 30, 30, 0.7);
+}
+
+/* CTA band */
+.biothomas-cta {
+  background: var(--bt-charcoal-dark);
+  color: #fff;
+  text-align: center;
+}
+
+.biothomas-cta .biothomas-section__heading {
+  color: #fff;
+}
+
+.biothomas-cta .biothomas-section__subheading {
+  color: rgba(255, 255, 255, 0.75);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.biothomas-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.4rem;
+}
+
+/* Comparison table */
+.biothomas-compare {
+  overflow-x: auto;
+}
+
+.biothomas-compare table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 64rem;
+  background: #fff;
+  border-radius: var(--bt-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--bt-shadow);
+}
+
+.biothomas-compare th,
+.biothomas-compare td {
+  padding: 1.2rem 1.4rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 1.4rem;
+  vertical-align: top;
+}
+
+.biothomas-compare thead th {
+  background: var(--bt-charcoal);
+  color: #fff;
+  font-weight: 600;
+}
+
+.biothomas-compare tbody th {
+  font-weight: 600;
+  color: var(--bt-charcoal);
+  background: #fafafa;
+  width: 22%;
+}
+
+/* Product extras */
+.biothomas-product-highlights {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1.6rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.biothomas-product-highlights li {
+  position: relative;
+  padding-left: 1.8rem;
+  font-size: 1.4rem;
+  color: rgba(30, 30, 30, 0.8);
+}
+
+.biothomas-product-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--bt-gold);
+}
+
+.biothomas-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2rem;
+  margin: 1.6rem 0;
+  padding: 1.4rem 0;
+  border-block: 1px solid rgba(58, 58, 58, 0.1);
+  font-size: 1.3rem;
+  color: var(--bt-muted);
+}
+
+.biothomas-disclaimer {
+  margin: 2.4rem 0 0;
+  padding: 1.4rem 1.6rem;
+  border-left: 3px solid var(--bt-gold);
+  background: rgba(255, 204, 0, 0.08);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: rgba(30, 30, 30, 0.75);
+}
+
+/* Recently viewed */
+.biothomas-recently-viewed[hidden] {
+  display: none;
+}

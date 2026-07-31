@@ -1,0 +1,205 @@
+{% comment %}
+  Product highlights, shipping/returns info, trust badges, accordion.
+  Uses product metafields when available:
+  - custom.flow_rate, custom.gas_output, custom.purity, custom.dual_user, custom.ideal_user
+{% endcomment %}
+
+{%- liquid
+  assign flow_rate = product.metafields.custom.flow_rate.value | default: product.metafields.custom.flow_rate
+  assign gas_output = product.metafields.custom.gas_output.value | default: product.metafields.custom.gas_output
+  assign purity = product.metafields.custom.purity.value | default: product.metafields.custom.purity
+  assign dual_user = product.metafields.custom.dual_user.value | default: product.metafields.custom.dual_user
+  assign ideal_user = product.metafields.custom.ideal_user.value | default: product.metafields.custom.ideal_user
+-%}
+
+<section
+  class="biothomas-section"
+  id="BiothomasProductDetails-{{ section.id }}"
+  data-bt-product-id="{{ product.id }}"
+  style="padding-top: 1rem;"
+>
+  <div class="biothomas-section__inner" style="max-width: 90rem;">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="biothomas-section__heading" style="font-size: 2.4rem; margin-bottom: 1.6rem;">
+        {{ section.settings.heading | escape }}
+      </h2>
+    {%- endif -%}
+
+    <ul class="biothomas-product-highlights">
+      {%- if flow_rate != blank -%}
+        <li>Flow rate: {{ flow_rate }}</li>
+      {%- elsif section.settings.fallback_highlight_1 != blank -%}
+        <li>{{ section.settings.fallback_highlight_1 | escape }}</li>
+      {%- endif -%}
+      {%- if gas_output != blank -%}
+        <li>Gas output: {{ gas_output }}</li>
+      {%- elsif section.settings.fallback_highlight_2 != blank -%}
+        <li>{{ section.settings.fallback_highlight_2 | escape }}</li>
+      {%- endif -%}
+      {%- if purity != blank -%}
+        <li>Purity: {{ purity }}</li>
+      {%- elsif section.settings.fallback_highlight_3 != blank -%}
+        <li>{{ section.settings.fallback_highlight_3 | escape }}</li>
+      {%- endif -%}
+      {%- if dual_user != blank -%}
+        <li>Dual-user: {{ dual_user }}</li>
+      {%- endif -%}
+      {%- if ideal_user != blank -%}
+        <li>Ideal for: {{ ideal_user }}</li>
+      {%- endif -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'highlight' -%}
+          <li {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+
+    <div class="biothomas-trust-row" aria-label="Trust signals">
+      <span>{{ section.settings.badge_shipping | escape }}</span>
+      <span>{{ section.settings.badge_returns | escape }}</span>
+      <span>{{ section.settings.badge_warranty | escape }}</span>
+      <span>{{ section.settings.badge_support | escape }}</span>
+    </div>
+
+    <div class="biothomas-faq">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'accordion' -%}
+          <details {{ block.shopify_attributes }}>
+            <summary>{{ block.settings.title | escape }}</summary>
+            <div class="biothomas-faq__answer rte">{{ block.settings.content }}</div>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.show_review_placeholder -%}
+      <div class="biothomas-disclaimer" style="margin-top: 2.4rem;" id="Reviews-{{ section.id }}">
+        <strong>Reviews</strong> — TODO: Connect Shopify Product Reviews or a reviews app. Placeholder for star ratings and customer feedback.
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIOThomas Product Details",
+  "tag": "section",
+  "class": "section-biothomas-product-details",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Product highlights"
+    },
+    {
+      "type": "text",
+      "id": "fallback_highlight_1",
+      "label": "Fallback highlight 1",
+      "default": "Clinical-grade molecular hydrogen / oxyhydrogen output"
+    },
+    {
+      "type": "text",
+      "id": "fallback_highlight_2",
+      "label": "Fallback highlight 2",
+      "default": "Designed for daily wellness and recovery protocols"
+    },
+    {
+      "type": "text",
+      "id": "fallback_highlight_3",
+      "label": "Fallback highlight 3",
+      "default": "Includes starter accessories and 1-year warranty"
+    },
+    {
+      "type": "text",
+      "id": "badge_shipping",
+      "label": "Shipping badge",
+      "default": "Free shipping on systems"
+    },
+    {
+      "type": "text",
+      "id": "badge_returns",
+      "label": "Returns badge",
+      "default": "TODO: Confirm returns window"
+    },
+    {
+      "type": "text",
+      "id": "badge_warranty",
+      "label": "Warranty badge",
+      "default": "1-year warranty included"
+    },
+    {
+      "type": "text",
+      "id": "badge_support",
+      "label": "Support badge",
+      "default": "Specialist support"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_review_placeholder",
+      "label": "Show review placeholder",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "Highlight",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Additional product highlight" }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Shipping information" },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>TODO: Confirm shipping regions, lead times, and duties. Systems typically ship with free delivery where offered.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIOThomas Product Details",
+      "blocks": [
+        {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping information",
+            "content": "<p>TODO: Confirm shipping regions, lead times, and duties. Systems typically ship with free delivery where offered.</p>"
+          }
+        },
+        {
+          "type": "accordion",
+          "settings": {
+            "title": "Returns information",
+            "content": "<p>TODO: Replace with client-approved refund policy summary and link to full policy page.</p>"
+          }
+        },
+        {
+          "type": "accordion",
+          "settings": {
+            "title": "Warranty",
+            "content": "<p>Each machine includes a 1-year warranty. Extended coverage options can be offered as product variants or add-ons.</p>"
+          }
+        },
+        {
+          "type": "accordion",
+          "settings": {
+            "title": "Safety & disclaimer",
+            "content": "<p>TODO: Wellness information is not medical advice. Follow the manual and consult a qualified professional before use.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

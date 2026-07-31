@@ -1,0 +1,51 @@
+<section
+  class="biothomas-section biothomas-recently-viewed"
+  id="BiothomasRecentlyViewed-{{ section.id }}"
+  data-bt-recently-viewed
+  data-bt-current-product="{{ product.id }}"
+  data-bt-recommendations-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4"
+  hidden
+>
+  <div class="biothomas-section__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="biothomas-section__heading" style="margin-bottom: 2rem;">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+    <p class="biothomas-section__subheading">
+      {{ section.settings.text | default: 'Your recently viewed BIOThomas products will appear here as you browse.' | escape }}
+    </p>
+    {% comment %}
+      TODO: Enhance with Ajax fetch of stored product IDs.
+      Dawn related-products section covers complementary merchandising.
+    {% endcomment %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIOThomas Recently Viewed",
+  "tag": "section",
+  "class": "section-biothomas-recently-viewed",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Recently viewed"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Helper text",
+      "default": "Your recently viewed BIOThomas products will appear here as you browse."
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIOThomas Recently Viewed"
+    }
+  ]
+}
+{% endschema %}

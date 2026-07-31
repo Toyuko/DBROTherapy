@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "comparison": {
+      "type": "biothomas-comparison",
+      "blocks": {
+        "col1": { "type": "product_column", "settings": { "title": "BIO H₂-Lite" } },
+        "col2": { "type": "product_column", "settings": { "title": "BIO OxyHydrogen Pro" } },
+        "col3": { "type": "product_column", "settings": { "title": "BIO Hydro-Max 3000" } },
+        "r1": {
+          "type": "row",
+          "settings": {
+            "label": "Gas Output (H₂ vs Oxyhydrogen)",
+            "value_1": "Pure H₂",
+            "value_2": "Oxyhydrogen / Brown's Gas",
+            "value_3": "H₂ + Oxyhydrogen"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "label": "Flow Rate (ml/min)",
+            "value_1": "300–600 ml/min",
+            "value_2": "1200–1800 ml/min",
+            "value_3": "3000 ml/min"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "label": "Medical Purity Rating",
+            "value_1": "99.99%",
+            "value_2": "99.99%",
+            "value_3": "99.99%"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "label": "Dual-User Capability",
+            "value_1": "No",
+            "value_2": "No",
+            "value_3": "Yes"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "label": "Controls",
+            "value_1": "LED panel",
+            "value_2": "Touchscreen",
+            "value_3": "Touchscreen"
+          }
+        },
+        "r6": {
+          "type": "row",
+          "settings": {
+            "label": "Ideal Target User",
+            "value_1": "Personal / Travel",
+            "value_2": "Athlete",
+            "value_3": "Clinic"
+          }
+        }
+      },
+      "block_order": ["col1", "col2", "col3", "r1", "r2", "r3", "r4", "r5", "r6"],
+      "settings": {
+        "heading": "Device Comparison Tool",
+        "subheading": "Side-by-side specs for every BIOThomas machine — choose the right flow and gas profile for your goals.",
+        "first_column_label": "Specification"
+      }
+    },
+    "cta": {
+      "type": "biothomas-cta",
+      "settings": {
+        "heading": "Found your system?",
+        "text": "Assign real products to the comparison columns in the Theme Editor for live prices and Add to Cart links.",
+        "button_label_1": "Shop all",
+        "button_link_1": "shopify://collections/all",
+        "button_label_2": "Talk to a specialist",
+        "button_link_2": "shopify://pages/contact"
+      }
+    }
+  },
+  "order": ["main", "comparison", "cta"]
+}

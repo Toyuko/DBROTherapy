@@ -1,0 +1,347 @@
+{
+  "sections": {
+    "biothomas_hero": {
+      "type": "biothomas-hero",
+      "settings": {
+        "eyebrow": "BIOThomas",
+        "heading": "Advanced Molecular Hydrogen & Oxyhydrogen Systems",
+        "text": "Find Your Path. Heal. Grow. — clinical-grade H₂ and Brown's Gas therapy for daily wellness, athletic recovery, and professional care.",
+        "button_label_1": "Browse Systems",
+        "button_link_1": "shopify://collections/all",
+        "button_label_2": "Explore Science",
+        "button_link_2": "shopify://pages/science"
+      }
+    },
+    "biothomas_trust": {
+      "type": "biothomas-trust-badges",
+      "blocks": {
+        "badge_1": {
+          "type": "badge",
+          "settings": {
+            "value": "3000 ml/min",
+            "label": "Peak Flow Capacity"
+          }
+        },
+        "badge_2": {
+          "type": "badge",
+          "settings": {
+            "value": "99.99%",
+            "label": "Pure H₂ Output"
+          }
+        },
+        "badge_3": {
+          "type": "badge",
+          "settings": {
+            "value": "Medical",
+            "label": "Warranty Coverage"
+          }
+        },
+        "badge_4": {
+          "type": "badge",
+          "settings": {
+            "value": "Free",
+            "label": "Global Shipping"
+          }
+        }
+      },
+      "block_order": ["badge_1", "badge_2", "badge_3", "badge_4"],
+      "settings": {
+        "heading": "Why BIOThomas"
+      }
+    },
+    "biothomas_services": {
+      "type": "biothomas-featured-services",
+      "blocks": {
+        "service_1": {
+          "type": "service",
+          "settings": {
+            "title": "Personal H₂ Therapy",
+            "text": "Daily molecular hydrogen sessions designed for travel and at-home routines.",
+            "link_label": "Shop H₂-Lite →",
+            "link": "shopify://collections/all"
+          }
+        },
+        "service_2": {
+          "type": "service",
+          "settings": {
+            "title": "Athletic Recovery",
+            "text": "Higher-flow oxyhydrogen support for post-training inflammation modulation.",
+            "link_label": "Shop Pro systems →",
+            "link": "shopify://collections/all"
+          }
+        },
+        "service_3": {
+          "type": "service",
+          "settings": {
+            "title": "Clinical Systems",
+            "text": "Dual-user Hydro-Max platforms for professional and clinic environments.",
+            "link_label": "View clinical →",
+            "link": "shopify://pages/services"
+          }
+        }
+      },
+      "block_order": ["service_1", "service_2", "service_3"],
+      "settings": {
+        "heading": "Featured Services",
+        "subheading": "Personal wellness, athletic recovery, and clinical-grade oxyhydrogen protocols."
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Systems",
+        "heading_size": "h2",
+        "description": "Three precision-engineered platforms — from personal travel hydration to dual-user clinical biohacking.",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "1",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "biothomas_about": {
+      "type": "biothomas-about",
+      "settings": {
+        "eyebrow": "About BIOThomas",
+        "heading": "Precision hydrogen systems for modern wellness",
+        "text": "<p>TODO: Replace with client-approved BIOThomas story. We design clinical-grade molecular hydrogen and oxyhydrogen platforms for daily wellness, athletic recovery, and professional care.</p>",
+        "button_label": "Our story",
+        "button_link": "shopify://pages/about",
+        "show_disclaimer": true
+      }
+    },
+    "biothomas_benefits": {
+      "type": "biothomas-benefits",
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "label": "Mitochondrial Energy",
+            "title": "Fuel cellular energy pathways",
+            "body": "Molecular hydrogen acts as a selective antioxidant, supporting mitochondrial efficiency and ATP production without disrupting beneficial signaling ROS.",
+            "point_1": "Supports NAD⁺ / redox balance",
+            "point_2": "Gentle daily inhalation protocols",
+            "point_3": "Ideal paired with H₂-Lite travel use",
+            "caption": "Cellular energy from the inside out"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "label": "Athletic Recovery",
+            "title": "Recover faster between sessions",
+            "body": "Oxyhydrogen (Brown's Gas) delivery can support post-training inflammation modulation and perceived recovery for high-output athletes.",
+            "point_1": "1200–1800 ml/min Pro flow band",
+            "point_2": "Respiratory comfort during longer sessions",
+            "point_3": "Fits evening recovery routines",
+            "caption": "Train hard. Recover smarter."
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "label": "Neuroprotection",
+            "title": "Support cognitive resilience",
+            "body": "Emerging research explores hydrogen's role in oxidative stress pathways relevant to focus, calm, and long-term neurological wellness protocols.",
+            "point_1": "Quiet, at-home session design",
+            "point_2": "Consistent purity at 99.99%",
+            "point_3": "Clinician-friendly Hydro-Max option",
+            "caption": "Clarity through molecular care"
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "label": "Anti-Aging",
+            "title": "Longevity-minded daily rituals",
+            "body": "Integrate hydrogen therapy into a broader longevity stack — sleep, movement, nutrition — with systems built for years of reliable use.",
+            "point_1": "Extended warranty add-ons",
+            "point_2": "Dual-user clinic & couple protocols",
+            "point_3": "Global free shipping on systems",
+            "caption": "Heal. Grow. Stay resilient."
+          }
+        }
+      },
+      "block_order": ["benefit_1", "benefit_2", "benefit_3", "benefit_4"],
+      "settings": {
+        "heading": "Health Benefits",
+        "subheading": "Explore how molecular hydrogen and oxyhydrogen support energy, recovery, cognition, and longevity."
+      }
+    },
+    "biothomas_testimonials": {
+      "type": "biothomas-testimonials",
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "TODO: Client testimonial about daily H₂ sessions and recovery.",
+            "author": "Alex M.",
+            "role": "Endurance athlete"
+          }
+        },
+        "t2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "TODO: Clinic partner quote about dual-user Hydro-Max protocols.",
+            "author": "Dr. Rivera",
+            "role": "Wellness clinic director"
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "TODO: Customer quote about travel-friendly H₂-Lite routines.",
+            "author": "Jordan K.",
+            "role": "BIOThomas customer"
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3"],
+      "settings": {
+        "heading": "What clients say",
+        "subheading": "TODO: Replace placeholder testimonials with client-approved quotes before launch."
+      }
+    },
+    "biothomas_gallery": {
+      "type": "biothomas-gallery",
+      "blocks": {
+        "g1": { "type": "image", "settings": { "caption": "H₂-Lite — Front" } },
+        "g2": { "type": "image", "settings": { "caption": "OxyHydrogen Pro — In use" } },
+        "g3": { "type": "image", "settings": { "caption": "Hydro-Max — Clinic" } },
+        "g4": { "type": "image", "settings": { "caption": "Accessories" } },
+        "g5": { "type": "image", "settings": { "caption": "Recovery session" } },
+        "g6": { "type": "image", "settings": { "caption": "Detail" } }
+      },
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"],
+      "settings": {
+        "heading": "Gallery",
+        "subheading": "TODO: Add lifestyle and product photography."
+      }
+    },
+    "featured_blog": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Featured Articles",
+        "heading_size": "h2",
+        "blog": "news",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "padding_top": 56,
+        "padding_bottom": 36
+      }
+    },
+    "biothomas_faq": {
+      "type": "biothomas-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "What is the difference between H₂ and oxyhydrogen?",
+            "answer": "<p>H₂ systems deliver pure molecular hydrogen. Oxyhydrogen (Brown's Gas) systems deliver a hydrogen–oxygen mix, often preferred for higher-flow respiratory and recovery protocols.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>TODO: Confirm shipping regions, duties, voltage, and regional compliance.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "How do I choose a flow rate?",
+            "answer": "<p>Start with H₂-Lite for personal daily use, OxyHydrogen Pro for athletic recovery, or Hydro-Max 3000 for dual-user clinical environments.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "heading": "FAQ",
+        "subheading": "Common questions about BIOThomas systems, shipping, and usage.",
+        "open_first": true,
+        "button_label": "View all FAQs",
+        "button_link": "shopify://pages/faq"
+      }
+    },
+    "newsletter": {
+      "type": "email-signup-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Protocol updates & wellness tips",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>TODO: Confirm newsletter consent language. Join the BIOThomas list for product updates and educational content.</p>",
+            "text_style": "body"
+          }
+        },
+        "email_form": {
+          "type": "email_form"
+        }
+      },
+      "block_order": ["heading", "paragraph", "email_form"],
+      "settings": {
+        "show_background_image": false,
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "biothomas_cta": {
+      "type": "biothomas-cta",
+      "settings": {
+        "heading": "Find Your Path. Heal. Grow.",
+        "text": "Explore BIOThomas systems for daily wellness, athletic recovery, and professional care.",
+        "button_label_1": "Shop systems",
+        "button_link_1": "shopify://collections/all",
+        "button_label_2": "Contact us",
+        "button_link_2": "shopify://pages/contact"
+      }
+    }
+  },
+  "order": [
+    "biothomas_hero",
+    "biothomas_trust",
+    "biothomas_services",
+    "featured_collection",
+    "biothomas_about",
+    "biothomas_benefits",
+    "biothomas_testimonials",
+    "biothomas_gallery",
+    "featured_blog",
+    "biothomas_faq",
+    "newsletter",
+    "biothomas_cta"
+  ]
+}

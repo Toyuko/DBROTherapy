@@ -1,0 +1,98 @@
+<section class="biothomas-section bt-atmosphere" id="BiothomasTestimonials-{{ section.id }}">
+  <div class="biothomas-section__inner">
+    <div class="biothomas-section__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="biothomas-section__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="biothomas-section__subheading">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="biothomas-grid biothomas-grid--3">
+      {%- for block in section.blocks -%}
+        <blockquote class="biothomas-quote" {{ block.shopify_attributes }}>
+          <p class="biothomas-quote__text">“{{ block.settings.quote | escape }}”</p>
+          {%- if block.settings.author != blank -%}
+            <footer>
+              <p class="biothomas-quote__author">{{ block.settings.author | escape }}</p>
+              {%- if block.settings.role != blank -%}
+                <p class="biothomas-quote__role">{{ block.settings.role | escape }}</p>
+              {%- endif -%}
+            </footer>
+          {%- endif -%}
+        </blockquote>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIOThomas Testimonials",
+  "tag": "section",
+  "class": "section-biothomas-testimonials",
+  "max_blocks": 9,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What clients say"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "TODO: Replace placeholder testimonials with client-approved quotes before launch."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "TODO: Client testimonial about daily H₂ sessions and recovery."
+        },
+        { "type": "text", "id": "author", "label": "Author", "default": "Alex M." },
+        { "type": "text", "id": "role", "label": "Role", "default": "Endurance athlete" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIOThomas Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "TODO: Client testimonial about daily H₂ sessions and recovery.",
+            "author": "Alex M.",
+            "role": "Endurance athlete"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "TODO: Clinic partner quote about dual-user Hydro-Max protocols.",
+            "author": "Dr. Rivera",
+            "role": "Wellness clinic director"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "TODO: Customer quote about travel-friendly H₂-Lite routines.",
+            "author": "Jordan K.",
+            "role": "BIOThomas customer"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

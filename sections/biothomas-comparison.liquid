@@ -1,0 +1,165 @@
+<section class="biothomas-section" id="BiothomasCompare-{{ section.id }}">
+  <div class="biothomas-section__inner">
+    <div class="biothomas-section__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="biothomas-section__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="biothomas-section__subheading">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="biothomas-compare" role="region" aria-label="{{ section.settings.heading | escape }}" tabindex="0">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">{{ section.settings.first_column_label | escape }}</th>
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'product_column' -%}
+                <th scope="col" {{ block.shopify_attributes }}>
+                  {%- if block.settings.product != blank -%}
+                    <a href="{{ block.settings.product.url }}">{{ block.settings.product.title }}</a>
+                    <div style="margin-top:0.4rem;font-weight:500;">{{ block.settings.product.price | money }}</div>
+                  {%- else -%}
+                    {{ block.settings.title | escape }}
+                  {%- endif -%}
+                </th>
+              {%- endif -%}
+            {%- endfor -%}
+          </tr>
+        </thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'row' -%}
+              <tr {{ block.shopify_attributes }}>
+                <th scope="row">{{ block.settings.label | escape }}</th>
+                <td>{{ block.settings.value_1 | escape }}</td>
+                <td>{{ block.settings.value_2 | escape }}</td>
+                <td>{{ block.settings.value_3 | escape }}</td>
+              </tr>
+            {%- endif -%}
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIOThomas Comparison",
+  "tag": "section",
+  "class": "section-biothomas-comparison",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Device Comparison Tool"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Side-by-side specs for every BIOThomas machine — choose the right flow and gas profile for your goals."
+    },
+    {
+      "type": "text",
+      "id": "first_column_label",
+      "label": "First column label",
+      "default": "Specification"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_column",
+      "name": "Product column",
+      "limit": 3,
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Fallback title",
+          "default": "BIOThomas Machine",
+          "info": "Used when no product is selected"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "name": "Spec row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Gas Output" },
+        { "type": "text", "id": "value_1", "label": "Column 1 value", "default": "Pure H₂" },
+        { "type": "text", "id": "value_2", "label": "Column 2 value", "default": "Oxyhydrogen / Brown's Gas" },
+        { "type": "text", "id": "value_3", "label": "Column 3 value", "default": "H₂ + Oxyhydrogen" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIOThomas Comparison",
+      "blocks": [
+        { "type": "product_column", "settings": { "title": "BIO H₂-Lite" } },
+        { "type": "product_column", "settings": { "title": "BIO OxyHydrogen Pro" } },
+        { "type": "product_column", "settings": { "title": "BIO Hydro-Max 3000" } },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Gas Output (H₂ vs Oxyhydrogen)",
+            "value_1": "Pure H₂",
+            "value_2": "Oxyhydrogen / Brown's Gas",
+            "value_3": "H₂ + Oxyhydrogen"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Flow Rate (ml/min)",
+            "value_1": "300–600 ml/min",
+            "value_2": "1200–1800 ml/min",
+            "value_3": "3000 ml/min"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Medical Purity Rating",
+            "value_1": "99.99%",
+            "value_2": "99.99%",
+            "value_3": "99.99%"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Dual-User Capability",
+            "value_1": "No",
+            "value_2": "No",
+            "value_3": "Yes"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Controls",
+            "value_1": "LED panel",
+            "value_2": "Touchscreen",
+            "value_3": "Touchscreen"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Ideal Target User",
+            "value_1": "Personal / Travel",
+            "value_2": "Athlete",
+            "value_3": "Clinic"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

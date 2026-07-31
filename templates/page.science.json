@@ -1,0 +1,132 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "benefits": {
+      "type": "biothomas-benefits",
+      "settings": {
+        "heading": "Science & Benefits",
+        "subheading": "Peer-informed pathways for molecular hydrogen (H\u2082) and oxyhydrogen (Brown's Gas) in cellular wellness protocols."
+      },
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "label": "Mitochondrial Energy",
+            "title": "Fuel cellular energy pathways",
+            "body": "Molecular hydrogen acts as a selective antioxidant, supporting mitochondrial efficiency and ATP production without disrupting beneficial signaling ROS.",
+            "point_1": "Supports NAD\u207a / redox balance",
+            "point_2": "Gentle daily inhalation protocols",
+            "point_3": "Ideal paired with H\u2082-Lite travel use",
+            "caption": "Cellular energy from the inside out"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "label": "Athletic Recovery",
+            "title": "Recover faster between sessions",
+            "body": "Oxyhydrogen (Brown's Gas) delivery can support post-training inflammation modulation and perceived recovery for high-output athletes.",
+            "point_1": "1200\u20131800 ml/min Pro flow band",
+            "point_2": "Respiratory comfort during longer sessions",
+            "point_3": "Fits evening recovery routines",
+            "caption": "Train hard. Recover smarter."
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "label": "Neuroprotection",
+            "title": "Support cognitive resilience",
+            "body": "Emerging research explores hydrogen's role in oxidative stress pathways relevant to focus, calm, and long-term neurological wellness protocols.",
+            "point_1": "Quiet, at-home session design",
+            "point_2": "Consistent purity at 99.99%",
+            "point_3": "Clinician-friendly Hydro-Max option",
+            "caption": "Clarity through molecular care"
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "label": "Anti-Aging",
+            "title": "Longevity-minded daily rituals",
+            "body": "Integrate hydrogen therapy into a broader longevity stack \u2014 sleep, movement, nutrition \u2014 with systems built for years of reliable use.",
+            "point_1": "Extended warranty add-ons",
+            "point_2": "Dual-user clinic & couple protocols",
+            "point_3": "Global free shipping on systems",
+            "caption": "Heal. Grow. Stay resilient."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4"
+      ]
+    },
+    "richtext": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Clinical demo",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>TODO: Embed owned clinical walkthrough video here (Theme Editor media or Shopify-hosted video). Prototype placeholder only.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Compare devices",
+            "button_link": "shopify://pages/compare",
+            "button_style_secondary": false,
+            "button_label_2": "Shop systems",
+            "button_link_2": "shopify://collections/all",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "disclaimer": {
+      "type": "biothomas-about",
+      "settings": {
+        "eyebrow": "Important",
+        "heading": "Educational content disclaimer",
+        "text": "<p>TODO: Finalize legal disclaimer. Information on this page is for educational purposes and is not medical advice. Always consult a qualified healthcare professional.</p>",
+        "button_label": "",
+        "show_disclaimer": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "benefits",
+    "richtext",
+    "disclaimer"
+  ]
+}

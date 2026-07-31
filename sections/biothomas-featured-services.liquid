@@ -1,0 +1,123 @@
+<section class="biothomas-section" id="BiothomasServices-{{ section.id }}">
+  <div class="biothomas-section__inner">
+    <div class="biothomas-section__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="biothomas-section__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="biothomas-section__subheading">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="biothomas-grid biothomas-grid--3">
+      {%- for block in section.blocks -%}
+        <article class="biothomas-card" {{ block.shopify_attributes }}>
+          <div class="biothomas-card__media">
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 900
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '400, 600, 900',
+                  sizes: '(min-width: 750px) 30vw, 100vw',
+                  alt: block.settings.image.alt | default: block.settings.title
+              }}
+            {%- else -%}
+              <span>{% comment %} TODO: Replace with service imagery {% endcomment %}Service imagery</span>
+            {%- endif -%}
+          </div>
+          <div class="biothomas-card__body">
+            {%- if block.settings.title != blank -%}
+              <h3 class="biothomas-card__title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="biothomas-card__text">{{ block.settings.text | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.link_label != blank -%}
+              <a
+                class="biothomas-card__link"
+                {% if block.settings.link == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ block.settings.link }}"
+                {% endif %}
+              >
+                {{ block.settings.link_label | escape }}
+              </a>
+            {%- endif -%}
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIOThomas Services",
+  "tag": "section",
+  "class": "section-biothomas-services",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured Services"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Personal wellness, athletic recovery, and clinical-grade oxyhydrogen protocols."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Personal H₂ Therapy" },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Daily molecular hydrogen sessions designed for travel and at-home routines."
+        },
+        { "type": "text", "id": "link_label", "label": "Link label", "default": "Learn more →" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIOThomas Services",
+      "blocks": [
+        {
+          "type": "service",
+          "settings": {
+            "title": "Personal H₂ Therapy",
+            "text": "Daily molecular hydrogen sessions designed for travel and at-home routines."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Athletic Recovery",
+            "text": "Higher-flow oxyhydrogen support for post-training inflammation modulation."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Clinical Systems",
+            "text": "Dual-user Hydro-Max platforms for professional and clinic environments."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

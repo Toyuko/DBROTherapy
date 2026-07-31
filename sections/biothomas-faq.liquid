@@ -1,0 +1,154 @@
+{%- assign faq_count = section.blocks.size -%}
+
+<section class="biothomas-section" id="BiothomasFaq-{{ section.id }}" style="background: #fff;">
+  <div class="biothomas-section__inner" style="max-width: 80rem;">
+    <div class="biothomas-section__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="biothomas-section__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="biothomas-section__subheading">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="biothomas-faq">
+      {%- for block in section.blocks -%}
+        <details {% if forloop.first and section.settings.open_first %}open{% endif %} {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question | escape }}</summary>
+          <div class="biothomas-faq__answer rte">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.button_label != blank -%}
+      <div style="margin-top: 2.4rem;">
+        <a
+          class="button button--secondary"
+          {% if section.settings.button_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.button_link }}"
+          {% endif %}
+        >
+          {{ section.settings.button_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{%- if faq_count > 0 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- for block in section.blocks -%}
+          {
+            "@type": "Question",
+            "name": {{ block.settings.question | json }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ block.settings.answer | strip_html | json }}
+            }
+          }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "BIOThomas FAQ",
+  "tag": "section",
+  "class": "section-biothomas-faq",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FAQ"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Common questions about BIOThomas systems, shipping, and usage."
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Open first question",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Optional button label",
+      "default": "Contact support"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Optional button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is the difference between H₂ and oxyhydrogen?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>H₂ systems deliver pure molecular hydrogen. Oxyhydrogen (Brown's Gas) systems deliver a hydrogen–oxygen mix, often preferred for higher-flow respiratory and recovery protocols.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIOThomas FAQ",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "What is the difference between H₂ and oxyhydrogen?",
+            "answer": "<p>H₂ systems deliver pure molecular hydrogen. Oxyhydrogen (Brown's Gas) systems deliver a hydrogen–oxygen mix, often preferred for higher-flow respiratory and recovery protocols.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>TODO: Confirm shipping regions, duties, voltage, and regional compliance. Prototype assumed free global shipping on systems.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What is included with each machine?",
+            "answer": "<p>Each machine ships with a nasal cannula, deionized water starter kit, manual, power adapter, and a 1-year warranty. Extended coverage can be added on the product page.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do I choose a flow rate?",
+            "answer": "<p>Start with H₂-Lite (300–600) for personal daily use, OxyHydrogen Pro (1200–1800) for athletic recovery, or Hydro-Max 3000 for dual-user clinical environments. Use the Comparison page for a full matrix.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
