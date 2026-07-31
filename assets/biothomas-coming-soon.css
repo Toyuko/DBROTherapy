@@ -1,0 +1,346 @@
+/* BIOThomas password / coming soon — futuristic brand landing */
+
+.bt-coming-soon {
+  --bt-cs-ink: #1e1e1e;
+  --bt-cs-charcoal: #3a3a3a;
+  --bt-cs-gold: #ffcc00;
+  --bt-cs-red: #dd0000;
+  --bt-cs-soft: #f5f5f5;
+  --bt-cs-muted: rgba(30, 30, 30, 0.68);
+
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--bt-cs-ink);
+  background:
+    radial-gradient(ellipse 90% 70% at 8% 18%, rgba(255, 204, 0, 0.14), transparent 52%),
+    radial-gradient(ellipse 80% 55% at 92% 8%, rgba(221, 0, 0, 0.08), transparent 48%),
+    radial-gradient(ellipse 70% 50% at 50% 110%, rgba(58, 58, 58, 0.1), transparent 55%),
+    linear-gradient(165deg, #fafafa 0%, #f0f0f0 42%, #e8e8e8 100%);
+  font-family: 'DM Sans', var(--font-body-family), system-ui, sans-serif;
+}
+
+.bt-coming-soon__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(58, 58, 58, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58, 58, 58, 0.05) 1px, transparent 1px);
+  background-size: 4.8rem 4.8rem;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%);
+}
+
+.bt-coming-soon__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+.bt-coming-soon__orb--1 {
+  width: min(48vw, 28rem);
+  height: min(48vw, 28rem);
+  top: -8%;
+  right: -6%;
+  background: radial-gradient(circle, rgba(255, 204, 0, 0.22), transparent 68%);
+  animation: bt-cs-drift 14s ease-in-out infinite;
+}
+
+.bt-coming-soon__orb--2 {
+  width: min(56vw, 34rem);
+  height: min(56vw, 34rem);
+  bottom: -18%;
+  left: -12%;
+  background: radial-gradient(circle, rgba(58, 58, 58, 0.12), transparent 70%);
+  animation: bt-cs-drift 18s ease-in-out infinite reverse;
+}
+
+.bt-coming-soon__bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bt-coming-soon__bubble {
+  position: absolute;
+  bottom: -10%;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.12));
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: inset 0 0 12px rgba(255, 204, 0, 0.12);
+  animation: bt-cs-rise linear infinite;
+  opacity: 0;
+}
+
+.bt-coming-soon__top {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.6rem 1.6rem 0;
+}
+
+.bt-coming-soon__enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid rgba(58, 58, 58, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  color: var(--bt-cs-charcoal);
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.bt-coming-soon__enter:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(58, 58, 58, 0.28);
+}
+
+.bt-coming-soon__enter .svg-wrapper {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.bt-coming-soon__main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem 1.6rem 4rem;
+}
+
+.bt-coming-soon__content {
+  width: min(100%, 54rem);
+  text-align: center;
+}
+
+.bt-coming-soon__logo {
+  display: block;
+  width: min(100%, 42rem);
+  height: auto;
+  margin: 0 auto;
+  animation: bt-cs-fade-up 0.8s ease-out both;
+}
+
+.bt-coming-soon__status {
+  margin: 2.8rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--bt-cs-charcoal);
+  animation: bt-cs-fade-up 0.8s ease-out 0.12s both;
+}
+
+.bt-coming-soon__status::before,
+.bt-coming-soon__status::after {
+  content: '';
+  display: inline-block;
+  width: 2.4rem;
+  height: 1px;
+  margin: 0 1rem;
+  vertical-align: middle;
+  background: linear-gradient(90deg, transparent, var(--bt-cs-gold), transparent);
+}
+
+.bt-coming-soon__heading {
+  margin: 1.4rem 0 0;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: var(--bt-cs-ink);
+  animation: bt-cs-fade-up 0.8s ease-out 0.2s both;
+}
+
+.bt-coming-soon__text {
+  margin: 1.4rem auto 0;
+  max-width: 38rem;
+  font-size: 1.65rem;
+  line-height: 1.55;
+  color: var(--bt-cs-muted);
+  animation: bt-cs-fade-up 0.8s ease-out 0.28s both;
+}
+
+.bt-coming-soon__form {
+  margin: 2.8rem auto 0;
+  max-width: 42rem;
+  animation: bt-cs-fade-up 0.8s ease-out 0.36s both;
+}
+
+.bt-coming-soon__form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+@media screen and (min-width: 750px) {
+  .bt-coming-soon__form-row {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.bt-coming-soon__field {
+  position: relative;
+  flex: 1;
+}
+
+.bt-coming-soon__input {
+  width: 100%;
+  height: 5.2rem;
+  padding: 0 1.6rem;
+  border: 1px solid rgba(58, 58, 58, 0.16);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--bt-cs-ink);
+  font: inherit;
+  font-size: 1.5rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bt-coming-soon__input::placeholder {
+  color: rgba(30, 30, 30, 0.4);
+}
+
+.bt-coming-soon__input:focus {
+  border-color: rgba(58, 58, 58, 0.45);
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.28);
+}
+
+.bt-coming-soon__submit {
+  height: 5.2rem;
+  padding: 0 2.4rem;
+  border: 0;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 55%, #4d4d4d 100%);
+  color: #fff;
+  font: inherit;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.bt-coming-soon__submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(31, 31, 31, 0.18);
+}
+
+.bt-coming-soon__submit:active {
+  transform: translateY(0);
+}
+
+.bt-coming-soon__message {
+  margin: 1.2rem 0 0;
+  font-size: 1.35rem;
+}
+
+.bt-coming-soon__message--success {
+  color: #1f6b3a;
+}
+
+.bt-coming-soon__message--error {
+  color: var(--bt-cs-red);
+}
+
+.bt-coming-soon__footer {
+  position: relative;
+  z-index: 2;
+  padding: 0 1.6rem 2.4rem;
+  text-align: center;
+  font-size: 1.25rem;
+  color: rgba(30, 30, 30, 0.45);
+}
+
+.bt-coming-soon__footer a {
+  color: inherit;
+}
+
+@keyframes bt-cs-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bt-cs-rise {
+  0% {
+    transform: translateY(0) scale(0.75);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes bt-cs-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-2%, 3%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bt-coming-soon__logo,
+  .bt-coming-soon__status,
+  .bt-coming-soon__heading,
+  .bt-coming-soon__text,
+  .bt-coming-soon__form,
+  .bt-coming-soon__orb,
+  .bt-coming-soon__bubble {
+    animation: none !important;
+    opacity: 1;
+  }
+}
+
+/* Password layout chrome when coming soon is active */
+body.password.bt-password-coming-soon {
+  background: transparent;
+}
+
+body.password.bt-password-coming-soon .password-main {
+  display: flex;
+  flex-direction: column;
+}
+
+body.password.bt-password-coming-soon .password-main > section:only-child {
+  height: auto;
+  flex: 1;
+}
+
+body.password.bt-password-coming-soon > .shopify-section:has(.password-header),
+body.password.bt-password-coming-soon > footer {
+  display: none;
+}
