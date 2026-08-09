@@ -1,4 +1,4 @@
-{% comment %} BIOThomas full-bleed hero — Theme Editor configurable {% endcomment %}
+{% comment %} BIOTECH THOMAS full-bleed hero — brand-first, cryo-inspired {% endcomment %}
 
 <section
   id="BiothomasHero-{{ section.id }}"
@@ -34,7 +34,15 @@
   <div class="biothomas-hero__overlay" aria-hidden="true"></div>
 
   <div class="biothomas-hero__inner">
-    {%- if section.settings.eyebrow != blank -%}
+    {%- if section.settings.show_logo -%}
+      <img
+        class="biothomas-hero__logo bt-animate-fade-up"
+        src="{{ 'biothomas-logo-transparent.png' | asset_url }}"
+        alt="BIOTECH THOMAS"
+        width="991"
+        height="314"
+      >
+    {%- elsif section.settings.eyebrow != blank -%}
       <p class="biothomas-hero__eyebrow bt-animate-fade-up">{{ section.settings.eyebrow | escape }}</p>
     {%- endif -%}
 
@@ -82,10 +90,16 @@
   "class": "section-biothomas-hero",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "show_logo",
+      "label": "Show brand logo in hero",
+      "default": true
+    },
+    {
       "type": "text",
       "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "BIOThomas"
+      "label": "Eyebrow (if logo hidden)",
+      "default": "BIOTECH THOMAS"
     },
     {
       "type": "text",
@@ -97,19 +111,17 @@
       "type": "textarea",
       "id": "text",
       "label": "Supporting text",
-      "default": "Precision-engineered H₂ and oxyhydrogen (Brown's Gas) systems for daily use, athletic use, and professional environments."
+      "default": "Precision-engineered H₂ and oxyhydrogen systems for daily use, athletic recovery, and professional environments."
     },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Background image",
-      "info": "TODO: Replace with owned BIOThomas hero imagery"
+      "label": "Background image"
     },
     {
       "type": "video",
       "id": "video",
-      "label": "Background video",
-      "info": "Optional. Uploaded Shopify video preferred over external stock."
+      "label": "Background video"
     },
     {
       "type": "text",
@@ -126,7 +138,7 @@
       "type": "text",
       "id": "button_label_2",
       "label": "Secondary button label",
-      "default": "Watch Product Demo"
+      "default": "Enquire Now"
     },
     {
       "type": "url",

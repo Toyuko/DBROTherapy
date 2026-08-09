@@ -172,7 +172,16 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <div class="header__heading-logo-wrapper">
+            <img
+              src="{{ 'biothomas-logo-transparent.png' | asset_url }}"
+              alt="BIOTECH THOMAS"
+              class="header__heading-logo motion-reduce"
+              width="{{ settings.logo_width }}"
+              height="{{ settings.logo_width | times: 314 | divided_by: 991 }}"
+              style="width: {{ settings.logo_width }}px; height: auto;"
+            >
+          </div>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -215,7 +224,16 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <div class="header__heading-logo-wrapper">
+            <img
+              src="{{ 'biothomas-logo-transparent.png' | asset_url }}"
+              alt="BIOTECH THOMAS"
+              class="header__heading-logo"
+              width="{{ settings.logo_width }}"
+              height="{{ settings.logo_width | times: 314 | divided_by: 991 }}"
+              style="width: {{ settings.logo_width }}px; height: auto;"
+            >
+          </div>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}

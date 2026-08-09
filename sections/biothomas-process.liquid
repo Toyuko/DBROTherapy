@@ -1,0 +1,149 @@
+{% comment %} Cryo-inspired step process for BIOTECH THOMAS {% endcomment %}
+
+<section class="biothomas-section biothomas-process" id="BiothomasProcess-{{ section.id }}">
+  <div class="biothomas-section__inner">
+    <div class="biothomas-section__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="biothomas-section__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="biothomas-section__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="biothomas-section__subheading">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="biothomas-process__grid">
+      {%- for block in section.blocks -%}
+        <article class="biothomas-process__step" {{ block.shopify_attributes }}>
+          {%- if block.settings.title != blank -%}
+            <h3 class="biothomas-process__title">{{ block.settings.title | escape }}</h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="biothomas-process__text">{{ block.settings.text | escape }}</p>
+          {%- endif -%}
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="biothomas-cta__actions" style="margin-top: 3.2rem;">
+        <a
+          class="button"
+          {% if section.settings.button_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.button_link }}"
+          {% endif %}
+        >
+          {{ section.settings.button_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIOThomas Process",
+  "tag": "section",
+  "class": "section-biothomas-process",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Easy, Step-by-Step Process"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "From first enquiry to ongoing support — a clear path to the right BIOTECH THOMAS system."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Enquire Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Initial Inquiry" },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Connect with us to receive detailed information about our hydrogen and oxyhydrogen systems."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIOThomas Process",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Initial Inquiry",
+            "text": "Connect with us to receive detailed information about our hydrogen and oxyhydrogen systems."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Custom Consultation",
+            "text": "Explore your goals and get guidance on the ideal flow rate and gas profile for your setting."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Effortless Purchase",
+            "text": "A streamlined purchasing experience for personal, athletic, or professional systems."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Setup Guidance",
+            "text": "Clear installation and first-session guidance so your system is ready to run."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Training",
+            "text": "Learn protocols and best practices so you can get the most from every session."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Ongoing Support",
+            "text": "Reliable after-sales assistance whenever you need help with your BIOTECH THOMAS system."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
