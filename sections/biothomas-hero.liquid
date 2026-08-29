@@ -1,4 +1,4 @@
-{% comment %} BIOTECH THOMAS full-bleed hero — brand-first, cryo-inspired {% endcomment %}
+{% comment %} BIOTHOMAS full-bleed hero — brand-first, cryo-inspired {% endcomment %}
 
 <section
   id="BiothomasHero-{{ section.id }}"
@@ -29,6 +29,18 @@
           fetchpriority: 'high',
           loading: 'eager'
       }}
+    {%- else -%}
+      <video
+        class="biothomas-hero__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source src="{{ 'biothomas-hero.mp4' | asset_url }}" type="video/mp4">
+      </video>
     {%- endif -%}
   </div>
   <div class="biothomas-hero__overlay" aria-hidden="true"></div>
@@ -38,7 +50,7 @@
       <img
         class="biothomas-hero__logo bt-animate-fade-up"
         src="{{ 'biothomas-logo-transparent.png' | asset_url }}"
-        alt="BIOTECH THOMAS"
+        alt="BIOTHOMAS"
         width="991"
         height="314"
       >
@@ -85,7 +97,7 @@
 
 {% schema %}
 {
-  "name": "BIOThomas Hero",
+  "name": "BIOTHOMAS Hero",
   "tag": "section",
   "class": "section-biothomas-hero",
   "settings": [
@@ -99,7 +111,7 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow (if logo hidden)",
-      "default": "BIOTECH THOMAS"
+      "default": "BIOTHOMAS"
     },
     {
       "type": "text",
@@ -148,7 +160,7 @@
   ],
   "presets": [
     {
-      "name": "BIOThomas Hero"
+      "name": "BIOTHOMAS Hero"
     }
   ]
 }

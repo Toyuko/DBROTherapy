@@ -1,4 +1,4 @@
-# BIOThomas — Metafields & Metaobjects
+# BIOTHOMAS — Metafields & Metaobjects
 
 Configure in **Settings → Custom data**.
 

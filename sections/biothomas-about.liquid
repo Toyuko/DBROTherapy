@@ -1,6 +1,6 @@
 <section class="biothomas-section" id="BiothomasAbout-{{ section.id }}" style="background: #fff;">
   <div class="biothomas-section__inner">
-    <div class="biothomas-grid biothomas-grid--2" style="align-items: center;">
+    <div class="biothomas-grid biothomas-grid--2{% unless section.settings.show_media %} biothomas-about--text-only{% endunless %}" style="align-items: center;">
       <div>
         {%- if section.settings.eyebrow != blank -%}
           <p class="biothomas-hero__eyebrow" style="color: var(--bt-charcoal);">{{ section.settings.eyebrow | escape }}</p>
@@ -26,25 +26,48 @@
           </div>
         {%- endif -%}
       </div>
-      <div class="biothomas-card__media" style="min-height: 32rem; border-radius: var(--bt-radius-lg);">
-        {%- if section.settings.image != blank -%}
-          {{
-            section.settings.image
-            | image_url: width: 1400
-            | image_tag:
-              loading: 'lazy',
-              widths: '600, 900, 1200, 1400',
-              sizes: '(min-width: 750px) 45vw, 100vw',
-              alt: section.settings.image.alt | default: section.settings.heading
-          }}
-        {%- else -%}
-          <span>{% comment %} TODO: Replace with About BIOThomas imagery {% endcomment %}About BIOThomas</span>
-        {%- endif -%}
-      </div>
+      {%- if section.settings.show_media -%}
+        <div class="biothomas-about__media">
+          {%- if section.settings.video != blank -%}
+            {{
+              section.settings.video
+              | video_tag:
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false,
+                playsinline: true,
+                image_size: '1400x'
+            }}
+          {%- elsif section.settings.image != blank -%}
+            {{
+              section.settings.image
+              | image_url: width: 1400
+              | image_tag:
+                loading: 'lazy',
+                widths: '600, 900, 1200, 1400',
+                sizes: '(min-width: 750px) 45vw, 100vw',
+                alt: section.settings.image.alt | default: section.settings.heading
+            }}
+          {%- else -%}
+            <video
+              class="biothomas-about__video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="{{ section.settings.heading | default: 'BIOTHOMAS' | escape }}"
+            >
+              <source src="{{ 'biothomas-about.mp4' | asset_url }}" type="video/mp4">
+            </video>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
     </div>
     {%- if section.settings.show_disclaimer -%}
       <p class="biothomas-disclaimer">
-        {{ section.settings.disclaimer | default: 'BIOThomas systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice.' | escape }}
+        {{ section.settings.disclaimer | default: 'BIOTHOMAS systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice.' | escape }}
       </p>
     {%- endif -%}
   </div>
@@ -52,7 +75,7 @@
 
 {% schema %}
 {
-  "name": "BIOThomas About",
+  "name": "BIOTHOMAS About",
   "tag": "section",
   "class": "section-biothomas-about",
   "settings": [
@@ -60,7 +83,7 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "About BIOThomas"
+      "default": "About BIOTHOMAS"
     },
     {
       "type": "text",
@@ -72,12 +95,25 @@
       "type": "richtext",
       "id": "text",
       "label": "Text",
-      "default": "<p>TODO: Replace with client-approved BIOThomas story. We design professional-grade molecular hydrogen and oxyhydrogen platforms for daily use, athletic use, and professional environments.</p>"
+      "default": "<p>TODO: Replace with client-approved BIOTHOMAS story. We design professional-grade molecular hydrogen and oxyhydrogen platforms for daily use, athletic use, and professional environments.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_media",
+      "label": "Show media beside text",
+      "default": true
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video (Shopify-hosted)",
+      "info": "Optional. If empty, the theme asset biothomas-about.mp4 is used."
     },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Image",
+      "info": "Used when no video is selected and the theme asset is unavailable."
     },
     {
       "type": "text",
@@ -100,12 +136,12 @@
       "type": "textarea",
       "id": "disclaimer",
       "label": "Disclaimer text",
-      "default": "BIOThomas systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice."
+      "default": "BIOTHOMAS systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice."
     }
   ],
   "presets": [
     {
-      "name": "BIOThomas About"
+      "name": "BIOTHOMAS About"
     }
   ]
 }

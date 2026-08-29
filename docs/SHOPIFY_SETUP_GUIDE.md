@@ -1,4 +1,4 @@
-# BIOThomas — Shopify Setup Guide
+# BIOTHOMAS — Shopify Setup Guide
 
 Complete these steps in Shopify Admin after uploading the theme.
 
@@ -36,7 +36,7 @@ Canonical URLs and Organization schema in the theme use the live shop URL automa
 
 1. Upload **logo** (`assets/biothomas-logo.png` or SVG when available).  
 2. Upload **favicon** (TODO: client asset).  
-3. Confirm **BIOThomas** color schemes (preset applied).  
+3. Confirm **BIOTHOMAS** color schemes (preset applied).  
 4. Set cart type to **Drawer** (recommended).  
 5. Add social links when available.  
 6. Set brand headline: `Find Your Path. Build. Grow.`

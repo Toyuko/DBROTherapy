@@ -49,14 +49,14 @@
           "type": "question",
           "settings": {
             "question": "Is this medical advice?",
-            "answer": "<p>No. BIOThomas provides product and engineering information only. Follow the product manual. This site does not provide medical advice.</p>"
+            "answer": "<p>No. BIOTHOMAS provides product and engineering information only. Follow the product manual. This site does not provide medical advice.</p>"
           }
         }
       },
       "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
       "settings": {
         "heading": "Frequently asked questions",
-        "subheading": "Common questions about BIOThomas systems, shipping, and usage.",
+        "subheading": "Common questions about BIOTHOMAS systems, shipping, and usage.",
         "open_first": true,
         "button_label": "Still need help?",
         "button_link": "shopify://pages/contact"

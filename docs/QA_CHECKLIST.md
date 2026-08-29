@@ -1,4 +1,4 @@
-# BIOThomas — QA Checklist
+# BIOTHOMAS — QA Checklist
 
 Test against an unpublished theme with sample products loaded.
 

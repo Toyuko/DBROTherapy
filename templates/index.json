@@ -13,7 +13,7 @@
       "type": "biothomas-hero",
       "settings": {
         "show_logo": true,
-        "eyebrow": "BIOTECH THOMAS",
+        "eyebrow": "BIOTHOMAS",
         "heading": "Your One Stop Shop for Molecular Hydrogen Systems",
         "text": "Go beyond equipment \u2014 deliver results. Precision H\u2082 and oxyhydrogen systems for daily wellness, athletic recovery, and professional care.",
         "button_label_1": "Browse Systems",
@@ -61,7 +61,7 @@
         "badge_4"
       ],
       "settings": {
-        "heading": "Why BIOTECH THOMAS"
+        "heading": "Why BIOTHOMAS"
       }
     },
     "biothomas_services": {
@@ -70,6 +70,7 @@
         "service_1": {
           "type": "service",
           "settings": {
+            "image_asset": "service-personal-h2.jpg",
             "title": "Personal H\u2082 Systems",
             "text": "Compact molecular hydrogen systems designed for travel and at-home daily use.",
             "link_label": "Learn More",
@@ -79,6 +80,7 @@
         "service_2": {
           "type": "service",
           "settings": {
+            "image_asset": "service-athletic-recovery.jpg",
             "title": "Athletic Recovery",
             "text": "Higher-flow oxyhydrogen systems built for post-training routines and athletic environments.",
             "link_label": "Learn More",
@@ -88,6 +90,7 @@
         "service_3": {
           "type": "service",
           "settings": {
+            "image_asset": "service-professional-systems.jpg",
             "title": "Professional Systems",
             "text": "Dual-user Hydro-Max platforms engineered for clinics and professional facilities.",
             "link_label": "Learn More",
@@ -136,9 +139,10 @@
     "biothomas_about": {
       "type": "biothomas-about",
       "settings": {
-        "eyebrow": "About BIOTECH THOMAS",
+        "eyebrow": "About BIOTHOMAS",
         "heading": "Precision hydrogen systems for modern daily use",
-        "text": "<p>TODO: Replace with client-approved BIOThomas story. We design professional-grade molecular hydrogen and oxyhydrogen platforms for daily use, athletic use, and professional environments.</p>",
+        "text": "<p>TODO: Replace with client-approved BIOTHOMAS story. We design professional-grade molecular hydrogen and oxyhydrogen platforms for daily use, athletic use, and professional environments.</p>",
+        "show_media": true,
         "button_label": "Our story",
         "button_link": "shopify://pages/about",
         "show_disclaimer": true
@@ -156,7 +160,8 @@
             "point_1": "Pure H\u2082 output at 99.99%",
             "point_2": "Quiet operation for daily use",
             "point_3": "Ideal paired with H\u2082-Lite travel use",
-            "caption": "Portable H\u2082 for everyday routines"
+            "caption": "Portable H\u2082 for everyday routines",
+            "image_asset": "capability-daily-use.jpg"
           }
         },
         "benefit_2": {
@@ -168,7 +173,8 @@
             "point_1": "1200\u20131800 ml/min Pro flow band",
             "point_2": "Stable output for longer run times",
             "point_3": "Fits evening training schedules",
-            "caption": "Train hard. Stay consistent."
+            "caption": "Train hard. Stay consistent.",
+            "image_asset": "capability-athletic-use.jpg"
           }
         },
         "benefit_3": {
@@ -176,11 +182,12 @@
           "settings": {
             "label": "Quiet Home Use",
             "title": "Designed for focused, quiet sessions",
-            "body": "BIOThomas systems are engineered for consistent purity and low-noise operation in home and studio settings.",
+            "body": "BIOTHOMAS systems are engineered for consistent purity and low-noise operation in home and studio settings.",
             "point_1": "Quiet, at-home session design",
             "point_2": "Consistent purity at 99.99%",
             "point_3": "Dual-user Hydro-Max option",
-            "caption": "Consistent purity. Quiet design."
+            "caption": "Consistent purity. Quiet design.",
+            "image_asset": "capability-quiet-home.jpg"
           }
         },
         "benefit_4": {
@@ -188,11 +195,12 @@
           "settings": {
             "label": "Long-Term Ownership",
             "title": "Built for years of reliable use",
-            "body": "BIOThomas platforms are engineered for durable daily operation, with warranty options and dual-user configurations.",
+            "body": "BIOTHOMAS platforms are engineered for durable daily operation, with warranty options and dual-user configurations.",
             "point_1": "Extended warranty add-ons",
             "point_2": "Dual-user and shared-environment setups",
             "point_3": "Global free shipping on systems",
-            "caption": "Build. Grow. Stay consistent."
+            "caption": "Build. Grow. Stay consistent.",
+            "image_asset": "capability-long-term.jpg"
           }
         }
       },
@@ -204,7 +212,7 @@
       ],
       "settings": {
         "heading": "System Capabilities",
-        "subheading": "Explore flow rates, gas profiles, and form factors across the BIOThomas lineup."
+        "subheading": "Explore flow rates, gas profiles, and form factors across the BIOTHOMAS lineup."
       }
     },
     "biothomas_testimonials": {
@@ -231,7 +239,7 @@
           "settings": {
             "quote": "TODO: Customer quote about travel-friendly H\u2082-Lite routines.",
             "author": "Jordan K.",
-            "role": "BIOThomas customer"
+            "role": "BIOTHOMAS customer"
           }
         }
       },
@@ -251,37 +259,64 @@
         "g1": {
           "type": "image",
           "settings": {
-            "caption": "H\u2082-Lite \u2014 Front"
+            "image_asset": "gallery-01-night-use.jpg",
+            "caption": "Silent night use"
           }
         },
         "g2": {
           "type": "image",
           "settings": {
-            "caption": "OxyHydrogen Pro \u2014 In use"
+            "image_asset": "gallery-02-household.jpg",
+            "caption": "Household molecular hydrogen"
           }
         },
         "g3": {
           "type": "image",
           "settings": {
-            "caption": "Hydro-Max \u2014 Professional setup"
+            "image_asset": "gallery-03-professional.jpg",
+            "caption": "Professional floor system"
           }
         },
         "g4": {
           "type": "image",
           "settings": {
-            "caption": "Accessories"
+            "image_asset": "gallery-04-athletic.jpg",
+            "caption": "Athletic recovery session"
           }
         },
         "g5": {
           "type": "image",
           "settings": {
-            "caption": "In-use session"
+            "image_asset": "gallery-05-dimensions.jpg",
+            "caption": "Hydro-Max dimensions"
           }
         },
         "g6": {
           "type": "image",
           "settings": {
-            "caption": "Detail"
+            "image_asset": "gallery-06-touch-panel.jpg",
+            "caption": "Touch panel \u2014 3000 mL/min"
+          }
+        },
+        "g7": {
+          "type": "image",
+          "settings": {
+            "image_asset": "gallery-07-certified.jpg",
+            "caption": "Certified inhalation system"
+          }
+        },
+        "g8": {
+          "type": "image",
+          "settings": {
+            "image_asset": "gallery-08-training.jpg",
+            "caption": "Training environment use"
+          }
+        },
+        "g9": {
+          "type": "image",
+          "settings": {
+            "image_asset": "gallery-09-clinical.jpg",
+            "caption": "Clinical care setting"
           }
         }
       },
@@ -291,11 +326,14 @@
         "g3",
         "g4",
         "g5",
-        "g6"
+        "g6",
+        "g7",
+        "g8",
+        "g9"
       ],
       "settings": {
         "heading": "Gallery",
-        "subheading": "TODO: Add lifestyle and product photography."
+        "subheading": "Product photography and real-world use across personal, athletic, and professional setups."
       }
     },
     "featured_blog": {
@@ -347,7 +385,7 @@
       ],
       "settings": {
         "heading": "FAQ",
-        "subheading": "Common questions about BIOThomas systems, shipping, and usage.",
+        "subheading": "Common questions about BIOTHOMAS systems, shipping, and usage.",
         "open_first": true,
         "button_label": "View all FAQs",
         "button_link": "shopify://pages/faq"
@@ -366,7 +404,7 @@
         "paragraph": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Join the BIOTECH THOMAS list for product updates and educational content.</p>"
+            "text": "<p>Join the BIOTHOMAS list for product updates and educational content.</p>"
           }
         },
         "email_form": {
@@ -439,7 +477,7 @@
           "type": "step",
           "settings": {
             "title": "Ongoing Support",
-            "text": "Reliable after-sales assistance whenever you need help with your BIOTECH THOMAS system."
+            "text": "Reliable after-sales assistance whenever you need help with your BIOTHOMAS system."
           }
         }
       },
@@ -454,7 +492,7 @@
       "settings": {
         "eyebrow": "How it works",
         "heading": "Our Easy, Step-by-Step Process",
-        "subheading": "From first enquiry to ongoing support \u2014 a clear path to the right BIOTECH THOMAS system.",
+        "subheading": "From first enquiry to ongoing support \u2014 a clear path to the right BIOTHOMAS system.",
         "button_label": "Enquire Now",
         "button_link": "shopify://pages/contact"
       }

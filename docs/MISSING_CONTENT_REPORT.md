@@ -1,4 +1,4 @@
-# BIOThomas — Missing Content Report
+# BIOTHOMAS — Missing Content Report
 
 **Date:** 2026-07-31  
 **Related:** `docs/PHASE1_MIGRATION_REPORT.md`
@@ -15,12 +15,12 @@ Placeholder strategy: theme will ship with clearly marked `TODO` comments / Them
 
 | Content | Priority | Status |
 | --- | --- | --- |
-| Legal business name | P0 | Unknown (BIOThomas vs BIO₂Tech Thomas) |
+| Legal business name | P0 | Unknown (confirm legal entity name for BIOTHOMAS) |
 | Registered address | P0 | Missing |
 | Support email / phone | P0 | Missing |
 | VAT / tax IDs | P1 | Missing |
 | Country of operation / shipping origins | P0 | Prototype says “global” — unverified |
-| Trademark guidance for BIOThomas / BIO₂Tech | P1 | Logo vs wordmark inconsistency |
+| Trademark guidance for BIOTHOMAS | P1 | Logo vs wordmark inconsistency |
 
 ---
 
@@ -28,7 +28,7 @@ Placeholder strategy: theme will ship with clearly marked `TODO` comments / Them
 
 | Page | Priority | Prototype coverage |
 | --- | --- | --- |
-| About BIOThomas | P0 | None |
+| About BIOTHOMAS | P0 | None |
 | Services | P0 | Implied only via benefits |
 | Contact | P0 | None (checkout form only) |
 | Blog / articles | P1 | None |
@@ -47,7 +47,7 @@ Placeholder strategy: theme will ship with clearly marked `TODO` comments / Them
 | --- | --- | --- |
 | Hero | P1 | CTAs OK; clinical demo has no real destination |
 | Featured Services | P0 | Section does not exist |
-| About BIOThomas teaser | P0 | Missing |
+| About BIOTHOMAS teaser | P0 | Missing |
 | Testimonials | P0 | Missing entirely |
 | Gallery captions | P1 | Missing |
 | Featured Articles | P1 | No blog content |
@@ -207,12 +207,12 @@ Please confirm:
 In Liquid / section defaults:
 
 ```liquid
-{% comment %} TODO: Replace with client-approved BIOThomas copy {% endcomment %}
+{% comment %} TODO: Replace with client-approved BIOTHOMAS copy {% endcomment %}
 ```
 
 In visible UI (Theme Editor defaults only, never fake legal pages as final):
 
-> *Placeholder content for BIOThomas — replace before launch.*
+> *Placeholder content for BIOTHOMAS — replace before launch.*
 
 Policy pages will use Shopify’s policy settings or clearly labeled draft copy.
 

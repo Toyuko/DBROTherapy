@@ -1,4 +1,4 @@
-# BIOTECH THOMAS — Standalone HTML Prototype
+# BIOTHOMAS — Standalone HTML Prototype
 
 Client-side storefront prototype with the green/black brand palette. **Not connected to Shopify** (or any backend). Cart and checkout are simulated in the browser.
 
@@ -13,7 +13,7 @@ Optional port: `./serve.sh 9000`
 
 ## Brand
 
-- **Logo:** `logo.png` (BIOTECH THOMAS)
+- **Logo:** `logo.png` (BIOTHOMAS)
 - **Accent green:** `#24A844`
 - **Ink / black:** `#121212` / `#000000`
 - **Soft ground:** `#F4F7F4`

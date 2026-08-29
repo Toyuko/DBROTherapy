@@ -97,7 +97,7 @@
           "type": "accordion",
           "settings": {
             "title": "Safety & disclaimer",
-            "content": "<p>TODO: BIOThomas systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice.</p>"
+            "content": "<p>TODO: BIOTHOMAS systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice.</p>"
           }
         }
       },
@@ -136,7 +136,7 @@
       "type": "biothomas-recently-viewed",
       "settings": {
         "heading": "Recently viewed",
-        "text": "Your recently viewed BIOThomas products will appear here as you browse."
+        "text": "Your recently viewed BIOTHOMAS products will appear here as you browse."
       }
     }
   },

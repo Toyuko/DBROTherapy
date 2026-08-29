@@ -23,7 +23,8 @@
             "point_1": "Pure H₂ output at 99.99%",
             "point_2": "Quiet operation for daily use",
             "point_3": "Ideal paired with H₂-Lite travel use",
-            "caption": "Portable H₂ for everyday routines"
+            "caption": "Portable H₂ for everyday routines",
+            "image_asset": "capability-daily-use.jpg"
           }
         },
         "benefit_2": {
@@ -35,7 +36,8 @@
             "point_1": "1200–1800 ml/min Pro flow band",
             "point_2": "Stable output for longer run times",
             "point_3": "Fits evening training schedules",
-            "caption": "Train hard. Stay consistent."
+            "caption": "Train hard. Stay consistent.",
+            "image_asset": "capability-athletic-use.jpg"
           }
         },
         "benefit_3": {
@@ -43,11 +45,12 @@
           "settings": {
             "label": "Quiet Home Use",
             "title": "Designed for focused, quiet sessions",
-            "body": "BIOThomas systems are engineered for consistent purity and low-noise operation in home and studio settings.",
+            "body": "BIOTHOMAS systems are engineered for consistent purity and low-noise operation in home and studio settings.",
             "point_1": "Quiet, at-home session design",
             "point_2": "Consistent purity at 99.99%",
             "point_3": "Dual-user Hydro-Max option",
-            "caption": "Consistent purity. Quiet design."
+            "caption": "Consistent purity. Quiet design.",
+            "image_asset": "capability-quiet-home.jpg"
           }
         },
         "benefit_4": {
@@ -55,11 +58,12 @@
           "settings": {
             "label": "Long-Term Ownership",
             "title": "Built for years of reliable use",
-            "body": "BIOThomas platforms are engineered for durable daily operation, with warranty options and dual-user configurations.",
+            "body": "BIOTHOMAS platforms are engineered for durable daily operation, with warranty options and dual-user configurations.",
             "point_1": "Extended warranty add-ons",
             "point_2": "Dual-user and shared-environment setups",
             "point_3": "Global free shipping on systems",
-            "caption": "Build. Grow. Stay consistent."
+            "caption": "Build. Grow. Stay consistent.",
+            "image_asset": "capability-long-term.jpg"
           }
         }
       },
@@ -117,8 +121,9 @@
       "settings": {
         "eyebrow": "Important",
         "heading": "Product information disclaimer",
-        "text": "<p>TODO: Finalize legal disclaimer. BIOThomas systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice.</p>",
+        "text": "<p>TODO: Finalize legal disclaimer. BIOTHOMAS systems are consumer/professional equipment. Follow the product manual. This site does not provide medical advice.</p>",
         "button_label": "",
+        "show_media": false,
         "show_disclaimer": false
       }
     }

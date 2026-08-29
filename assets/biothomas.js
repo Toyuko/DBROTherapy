@@ -1,5 +1,5 @@
 /**
- * BIOThomas theme interactions — benefits tabs, recently viewed products.
+ * BIOTHOMAS theme interactions — benefits tabs, recently viewed products.
  */
 (function () {
   function initBenefitsTabs(root) {

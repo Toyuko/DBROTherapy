@@ -10,9 +10,10 @@
     "about": {
       "type": "biothomas-about",
       "settings": {
-        "eyebrow": "About BIOThomas",
+        "eyebrow": "About BIOTHOMAS",
         "heading": "Find Your Path. Build. Grow.",
-        "text": "<p>TODO: Replace with the full BIOThomas brand story — mission, engineering heritage, and commitment to professional-grade molecular hydrogen systems.</p><p>BIOThomas focuses on premium H₂ and oxyhydrogen platforms for personal, athletic, and professional environments.</p>",
+        "text": "<p>TODO: Replace with the full BIOTHOMAS brand story — mission, engineering heritage, and commitment to professional-grade molecular hydrogen systems.</p><p>BIOTHOMAS focuses on premium H₂ and oxyhydrogen platforms for personal, athletic, and professional environments.</p>",
+        "show_media": true,
         "button_label": "Shop systems",
         "button_link": "shopify://collections/all",
         "show_disclaimer": true
@@ -21,7 +22,7 @@
     "cta": {
       "type": "biothomas-cta",
       "settings": {
-        "heading": "Ready to explore BIOThomas?",
+        "heading": "Ready to explore BIOTHOMAS?",
         "text": "Browse systems or contact our team for system selection guidance.",
         "button_label_1": "Shop all",
         "button_link_1": "shopify://collections/all",

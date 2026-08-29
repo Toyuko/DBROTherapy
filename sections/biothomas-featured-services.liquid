@@ -23,8 +23,16 @@
                   sizes: '(min-width: 750px) 30vw, 100vw',
                   alt: block.settings.image.alt | default: block.settings.title
               }}
+            {%- elsif block.settings.image_asset != blank -%}
+              <img
+                src="{{ block.settings.image_asset | asset_url }}"
+                alt="{{ block.settings.title | escape }}"
+                loading="lazy"
+                width="900"
+                height="900"
+              >
             {%- else -%}
-              <span>{% comment %} TODO: Replace with service imagery {% endcomment %}Service imagery</span>
+              <span>Service imagery</span>
             {%- endif -%}
           </div>
           <div class="biothomas-card__body">
@@ -55,7 +63,7 @@
 
 {% schema %}
 {
-  "name": "BIOThomas Services",
+  "name": "BIOTHOMAS Services",
   "tag": "section",
   "class": "section-biothomas-services",
   "max_blocks": 6,
@@ -79,6 +87,12 @@
       "name": "Service",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Image" },
+        {
+          "type": "text",
+          "id": "image_asset",
+          "label": "Theme asset filename",
+          "info": "Fallback when no Image is selected (e.g. service-personal-h2.jpg)."
+        },
         { "type": "text", "id": "title", "label": "Title", "default": "Personal H₂ Systems" },
         {
           "type": "textarea",
@@ -93,11 +107,12 @@
   ],
   "presets": [
     {
-      "name": "BIOThomas Services",
+      "name": "BIOTHOMAS Services",
       "blocks": [
         {
           "type": "service",
           "settings": {
+            "image_asset": "service-personal-h2.jpg",
             "title": "Personal H₂ Systems",
             "text": "Compact molecular hydrogen systems designed for travel and at-home daily use.",
             "link_label": "Shop H₂-Lite →"
@@ -106,6 +121,7 @@
         {
           "type": "service",
           "settings": {
+            "image_asset": "service-athletic-recovery.jpg",
             "title": "Athletic Use",
             "text": "Higher-flow oxyhydrogen systems built for post-training routines and athletic environments.",
             "link_label": "Shop Pro systems →"
@@ -114,6 +130,7 @@
         {
           "type": "service",
           "settings": {
+            "image_asset": "service-professional-systems.jpg",
             "title": "Professional Systems",
             "text": "Dual-user Hydro-Max platforms for professional environments.",
             "link_label": "View professional systems →"

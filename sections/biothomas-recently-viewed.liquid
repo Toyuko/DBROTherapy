@@ -11,7 +11,7 @@
       <h2 class="biothomas-section__heading" style="margin-bottom: 2rem;">{{ section.settings.heading | escape }}</h2>
     {%- endif -%}
     <p class="biothomas-section__subheading">
-      {{ section.settings.text | default: 'Your recently viewed BIOThomas products will appear here as you browse.' | escape }}
+      {{ section.settings.text | default: 'Your recently viewed BIOTHOMAS products will appear here as you browse.' | escape }}
     </p>
     {% comment %}
       TODO: Enhance with Ajax fetch of stored product IDs.
@@ -22,7 +22,7 @@
 
 {% schema %}
 {
-  "name": "BIOThomas Recently Viewed",
+  "name": "BIOTHOMAS Recently Viewed",
   "tag": "section",
   "class": "section-biothomas-recently-viewed",
   "enabled_on": {
@@ -39,12 +39,12 @@
       "type": "textarea",
       "id": "text",
       "label": "Helper text",
-      "default": "Your recently viewed BIOThomas products will appear here as you browse."
+      "default": "Your recently viewed BIOTHOMAS products will appear here as you browse."
     }
   ],
   "presets": [
     {
-      "name": "BIOThomas Recently Viewed"
+      "name": "BIOTHOMAS Recently Viewed"
     }
   ]
 }

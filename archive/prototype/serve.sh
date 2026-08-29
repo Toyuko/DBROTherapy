@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 cd "$(dirname "$0")"
 PORT="${1:-8765}"
-echo "BIOThomas prototype → http://127.0.0.1:${PORT}/index.html"
+echo "BIOTHOMAS prototype → http://127.0.0.1:${PORT}/index.html"
 exec python3 -m http.server "$PORT"

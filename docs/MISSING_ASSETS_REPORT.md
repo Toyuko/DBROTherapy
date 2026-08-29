@@ -1,4 +1,4 @@
-# BIOThomas — Missing Assets Report
+# BIOTHOMAS — Missing Assets Report
 
 **Date:** 2026-07-31  
 **Related:** `docs/PHASE1_MIGRATION_REPORT.md`
@@ -23,7 +23,7 @@ Priority: **P0** = blocks launch quality · **P1** = needed for strong conversio
 
 **Available now**
 
-- `logo.png` — BIOThomas / BIO₂Tech wordmark (use as interim)  
+- `logo.png` — BIOTHOMAS wordmark (use as interim)  
 - `Gemini_Generated_Image_*.png` — legacy DBRO Therapy mark (archive only)
 
 ---

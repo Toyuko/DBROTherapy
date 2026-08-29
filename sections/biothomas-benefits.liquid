@@ -60,6 +60,14 @@
                 sizes: '(min-width: 990px) 40vw, 100vw',
                 alt: block.settings.image.alt | default: block.settings.title
             }}
+          {%- elsif block.settings.image_asset != blank -%}
+            <img
+              src="{{ block.settings.image_asset | asset_url }}"
+              alt="{{ block.settings.caption | default: block.settings.title | escape }}"
+              loading="lazy"
+              width="1200"
+              height="900"
+            >
           {%- else -%}
             <span>{{ block.settings.caption | default: block.settings.title | escape }}</span>
           {%- endif -%}
@@ -71,7 +79,7 @@
 
 {% schema %}
 {
-  "name": "BIOThomas Capabilities",
+  "name": "BIOTHOMAS Capabilities",
   "tag": "section",
   "class": "section-biothomas-benefits",
   "max_blocks": 6,
@@ -86,7 +94,7 @@
       "type": "textarea",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Explore flow rates, gas profiles, and form factors across the BIOThomas lineup."
+      "default": "Explore flow rates, gas profiles, and form factors across the BIOTHOMAS lineup."
     }
   ],
   "blocks": [
@@ -106,13 +114,19 @@
         { "type": "text", "id": "point_2", "label": "Point 2", "default": "Quiet operation for daily use" },
         { "type": "text", "id": "point_3", "label": "Point 3", "default": "Ideal paired with H₂-Lite travel use" },
         { "type": "text", "id": "caption", "label": "Visual caption", "default": "Portable H₂ for everyday routines" },
-        { "type": "image_picker", "id": "image", "label": "Image" }
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        {
+          "type": "text",
+          "id": "image_asset",
+          "label": "Theme asset filename",
+          "info": "Fallback when no Image is selected (e.g. capability-daily-use.jpg)."
+        }
       ]
     }
   ],
   "presets": [
     {
-      "name": "BIOThomas Capabilities",
+      "name": "BIOTHOMAS Capabilities",
       "blocks": [
         {
           "type": "benefit",
@@ -123,7 +137,8 @@
             "point_1": "Pure H₂ output at 99.99%",
             "point_2": "Quiet operation for daily use",
             "point_3": "Ideal paired with H₂-Lite travel use",
-            "caption": "Portable H₂ for everyday routines"
+            "caption": "Portable H₂ for everyday routines",
+            "image_asset": "capability-daily-use.jpg"
           }
         },
         {
@@ -135,7 +150,8 @@
             "point_1": "1200–1800 ml/min Pro flow band",
             "point_2": "Stable output for longer run times",
             "point_3": "Fits evening training schedules",
-            "caption": "Train hard. Stay consistent."
+            "caption": "Train hard. Stay consistent.",
+            "image_asset": "capability-athletic-use.jpg"
           }
         },
         {
@@ -143,11 +159,12 @@
           "settings": {
             "label": "Quiet Home Use",
             "title": "Designed for focused, quiet sessions",
-            "body": "BIOThomas systems are engineered for consistent purity and low-noise operation in home and studio settings.",
+            "body": "BIOTHOMAS systems are engineered for consistent purity and low-noise operation in home and studio settings.",
             "point_1": "Quiet, at-home session design",
             "point_2": "Consistent purity at 99.99%",
             "point_3": "Dual-user Hydro-Max option",
-            "caption": "Consistent purity. Quiet design."
+            "caption": "Consistent purity. Quiet design.",
+            "image_asset": "capability-quiet-home.jpg"
           }
         },
         {
@@ -155,11 +172,12 @@
           "settings": {
             "label": "Long-Term Ownership",
             "title": "Built for years of reliable use",
-            "body": "BIOThomas platforms are engineered for durable daily operation, with warranty options and dual-user configurations.",
+            "body": "BIOTHOMAS platforms are engineered for durable daily operation, with warranty options and dual-user configurations.",
             "point_1": "Extended warranty add-ons",
             "point_2": "Dual-user and shared-environment setups",
             "point_3": "Global free shipping on systems",
-            "caption": "Build. Grow. Stay consistent."
+            "caption": "Build. Grow. Stay consistent.",
+            "image_asset": "capability-long-term.jpg"
           }
         }
       ]

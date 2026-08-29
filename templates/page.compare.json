@@ -71,7 +71,7 @@
       "block_order": ["col1", "col2", "col3", "r1", "r2", "r3", "r4", "r5", "r6"],
       "settings": {
         "heading": "Device Comparison Tool",
-        "subheading": "Side-by-side specs for every BIOThomas machine — choose the right flow and gas profile for your goals.",
+        "subheading": "Side-by-side specs for every BIOTHOMAS machine — choose the right flow and gas profile for your goals.",
         "first_column_label": "Specification"
       }
     },

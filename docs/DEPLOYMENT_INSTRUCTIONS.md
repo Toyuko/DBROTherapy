@@ -1,4 +1,4 @@
-# BIOThomas — Deployment Instructions
+# BIOTHOMAS — Deployment Instructions
 
 ## Prerequisites
 

@@ -1,10 +1,10 @@
-# BIOThomas — Shopify Online Store 2.0 Theme
+# BIOTHOMAS — Shopify Online Store 2.0 Theme
 
-Premium Shopify theme for **BIOThomas** (formerly DBROTherapy): molecular hydrogen and oxyhydrogen systems.
+Premium Shopify theme for **BIOTHOMAS** (formerly DBROTherapy): molecular hydrogen and oxyhydrogen systems.
 
 **Production domain:** [biothomas.com](https://biothomas.com)
 
-Built on [Dawn 15.5.0](https://github.com/Shopify/dawn) with a BIOThomas brand layer, configurable sections, and SEO foundations.
+Built on [Dawn 15.5.0](https://github.com/Shopify/dawn) with a BIOTHOMAS brand layer, configurable sections, and SEO foundations.
 
 ## Quick start
 
@@ -38,7 +38,7 @@ Upload without CLI: zip the theme folders (`assets`, `config`, `layout`, `locale
 
 ```
 assets/          # CSS, JS, logo
-config/          # settings_schema + settings_data (BIOThomas preset)
+config/          # settings_schema + settings_data (BIOTHOMAS preset)
 layout/          # theme.liquid (+ brand fonts/SEO)
 locales/         # Dawn translations
 sections/        # Dawn + biothomas-* sections
@@ -50,7 +50,7 @@ docs/            # Project reports & guides
 
 ## Brand
 
-- **Name:** BIOThomas  
+- **Name:** BIOTHOMAS  
 - **Tagline:** Find Your Path. Build. Grow.  
 - **Fonts:** Fraunces (display) + DM Sans (body)  
 - **Colors:** Charcoal `#3A3A3A`, soft `#F5F5F5`, gold `#FFCC00`, ink `#1E1E1E`  
@@ -58,7 +58,7 @@ docs/            # Project reports & guides
 
 ## Key custom sections
 
-- BIOThomas Hero  
+- BIOTHOMAS Hero  
 - Trust Badges  
 - Featured Services  
 - About  
@@ -73,4 +73,4 @@ docs/            # Project reports & guides
 
 ## License
 
-Dawn portions remain under Shopify’s [Dawn license](LICENSE.md). BIOThomas customizations are project-specific for Toyuko / BIOThomas.
+Dawn portions remain under Shopify’s [Dawn license](LICENSE.md). BIOTHOMAS customizations are project-specific for Toyuko / BIOTHOMAS.

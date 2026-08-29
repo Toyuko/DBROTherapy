@@ -1,11 +1,11 @@
-# BIOThomas — Phase 1 Migration Report
+# BIOTHOMAS — Phase 1 Migration Report
 
 **Date:** 2026-07-31  
 **Source repository:** https://github.com/Toyuko/DBROTherapy  
 **Existing website (prototype):** https://touysmith.com/dbro/  
 **Production domain:** https://biothomas.com  
 **Target:** Shopify Online Store 2.0 theme (Dawn foundation)  
-**Brand going forward:** BIOThomas (legacy working name: DBROTherapy)
+**Brand going forward:** BIOTHOMAS (legacy working name: DBROTherapy)
 
 ---
 
@@ -13,7 +13,7 @@
 
 The repository is **not** a Shopify theme. It is a single-page HTML/JS **prototype storefront** that simulates navigation, cart, and checkout in the browser. The live URL hosts the same prototype.
 
-**Migration path:** Archive the prototype, scaffold a Shopify CLI / Online Store 2.0 theme from Dawn, then re-implement BIOThomas branding, IA, and commerce features as editable sections, JSON templates, and native Shopify functionality.
+**Migration path:** Archive the prototype, scaffold a Shopify CLI / Online Store 2.0 theme from Dawn, then re-implement BIOTHOMAS branding, IA, and commerce features as editable sections, JSON templates, and native Shopify functionality.
 
 ---
 
@@ -35,7 +35,7 @@ The repository is **not** a Shopify theme. It is a single-page HTML/JS **prototy
 | Path | Role |
 | --- | --- |
 | `index.html` | Entire prototype app |
-| `logo.png` | Current BIOThomas wordmark (872×151 PNG) |
+| `logo.png` | Current BIOTHOMAS wordmark (872×151 PNG) |
 | `Gemini_Generated_Image_b3axzib3axzib3ax.png` | Legacy DBRO Therapy logo (unused in UI, 2816×1536) |
 | `serve.sh` | Local static server |
 | `.gitattributes` | Git metadata |
@@ -48,7 +48,7 @@ The repository is **not** a Shopify theme. It is a single-page HTML/JS **prototy
 
 | Asset | Status | Notes |
 | --- | --- | --- |
-| `logo.png` | **In use** | BIO₂Tech / BIOThomas wordmark; German flag accent; metallic silver on black; alt text currently “BIO₂Tech Thomas” |
+| `logo.png` | **In use** | BIOTHOMAS wordmark; German flag accent; metallic silver on black; alt text currently “BIOTHOMAS” |
 | `Gemini_Generated_Image_*.png` | **Legacy / unused** | DBRO Therapy logo (teal + sage figures) + tagline “FIND YOUR PATH. HEAL. GROW.” |
 
 ### Images
@@ -260,8 +260,8 @@ No dedicated services catalog. Implied offerings:
 
 | Context | Current state | Action |
 | --- | --- | --- |
-| Product brand | BIOThomas | Use everywhere in theme/UI |
-| Logo lockup | BIO₂Tech Thomas (with subscripts / TECH) | Keep asset; normalize copy to **BIOThomas** |
+| Product brand | BIOTHOMAS | Use everywhere in theme/UI |
+| Logo lockup | BIOTHOMAS | Keep asset; use **BIOTHOMAS** everywhere in copy |
 | Legacy | DBROTherapy / DBRO Therapy | Archive only; keep repo/git remote names if needed |
 | Alpine store fn | `dbroStore()` | Replace in Shopify migration (no Alpine store) |
 | Color token `teal` | Actually charcoal | Rename in theme CSS variables for clarity |

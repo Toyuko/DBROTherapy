@@ -20,11 +20,18 @@
                 loading: 'lazy',
                 widths: '400, 600, 800, 1000',
                 sizes: '(min-width: 750px) 30vw, 50vw',
-                alt: block.settings.image.alt | default: block.settings.caption | default: 'BIOThomas gallery image'
+                alt: block.settings.image.alt | default: block.settings.caption | default: 'BIOTHOMAS gallery image'
             }}
+          {%- elsif block.settings.image_asset != blank -%}
+            <img
+              src="{{ block.settings.image_asset | asset_url }}"
+              alt="{{ block.settings.caption | default: 'BIOTHOMAS gallery image' | escape }}"
+              loading="lazy"
+              width="1000"
+              height="1000"
+            >
           {%- else -%}
             <span style="display:grid;place-items:center;height:100%;color:#666;font-size:1.3rem;padding:1rem;text-align:center;">
-              {% comment %} TODO: Upload gallery image {% endcomment %}
               {{ block.settings.caption | default: 'Gallery placeholder' | escape }}
             </span>
           {%- endif -%}
@@ -39,7 +46,7 @@
 
 {% schema %}
 {
-  "name": "BIOThomas Gallery",
+  "name": "BIOTHOMAS Gallery",
   "tag": "section",
   "class": "section-biothomas-gallery",
   "max_blocks": 12,
@@ -54,7 +61,7 @@
       "type": "textarea",
       "id": "subheading",
       "label": "Subheading",
-      "default": "TODO: Add lifestyle and product photography."
+      "default": "Product photography and real-world use across personal, athletic, and professional setups."
     }
   ],
   "blocks": [
@@ -63,20 +70,62 @@
       "name": "Image",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Image" },
-        { "type": "text", "id": "caption", "label": "Caption", "default": "BIOThomas system" }
+        {
+          "type": "text",
+          "id": "image_asset",
+          "label": "Theme asset filename",
+          "info": "Fallback when no Image is selected (e.g. gallery-01-night-use.jpg)."
+        },
+        { "type": "text", "id": "caption", "label": "Caption", "default": "BIOTHOMAS system" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "BIOThomas Gallery",
+      "name": "BIOTHOMAS Gallery",
       "blocks": [
-        { "type": "image", "settings": { "caption": "H₂-Lite — Front" } },
-        { "type": "image", "settings": { "caption": "OxyHydrogen Pro — In use" } },
-        { "type": "image", "settings": { "caption": "Hydro-Max — Professional setup" } },
-        { "type": "image", "settings": { "caption": "Accessories" } },
-        { "type": "image", "settings": { "caption": "In-use session" } },
-        { "type": "image", "settings": { "caption": "Detail" } }
+        {
+          "type": "image",
+          "settings": {
+            "image_asset": "gallery-01-night-use.jpg",
+            "caption": "Silent night use"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "image_asset": "gallery-02-household.jpg",
+            "caption": "Household molecular hydrogen"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "image_asset": "gallery-03-professional.jpg",
+            "caption": "Professional floor system"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "image_asset": "gallery-04-athletic.jpg",
+            "caption": "Athletic recovery session"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "image_asset": "gallery-05-dimensions.jpg",
+            "caption": "Hydro-Max dimensions"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "image_asset": "gallery-06-touch-panel.jpg",
+            "caption": "Touch panel controls"
+          }
+        }
       ]
     }
   ]

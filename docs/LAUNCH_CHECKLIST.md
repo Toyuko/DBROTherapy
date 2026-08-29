@@ -1,4 +1,4 @@
-# BIOThomas — Launch Checklist
+# BIOTHOMAS — Launch Checklist
 
 Do not publish until every **P0** item is complete.
 

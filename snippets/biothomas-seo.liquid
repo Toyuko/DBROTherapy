@@ -1,9 +1,9 @@
 {% comment %}
-  BIOThomas JSON-LD: Organization, BreadcrumbList, Product, FAQPage (when applicable).
+  BIOTHOMAS JSON-LD: Organization, BreadcrumbList, Product, FAQPage (when applicable).
 {% endcomment %}
 
 {%- liquid
-  assign org_name = shop.name | default: 'BIOThomas'
+  assign org_name = shop.name | default: 'BIOTHOMAS'
   assign org_url = request.origin
   assign org_logo = settings.logo | default: blank
 -%}
